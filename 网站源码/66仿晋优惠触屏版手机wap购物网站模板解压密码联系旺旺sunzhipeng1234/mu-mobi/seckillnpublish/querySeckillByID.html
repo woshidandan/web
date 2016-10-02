@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=B7F995F1C637084BC9F0C2C87A8CFB02";
+</script><title>仿晋优惠触屏版手机wap购物网站模板秒杀正文-pppf.taobao.com整理搜集仅用于学习</title>
+<meta name="keywords" content="双双尚品梦特娇130D吸湿快干功能纤维连裤袜,秒杀,生活用品，袜子,太原,晋优惠" />
+<meta name="description" content="原价98元130D吸湿快干功能纤维连裤袜,现价10元秒杀,双双尚品" />
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<link href="../css/jq.css" rel="stylesheet" type="text/css">
+<link href="../css/manage.css" rel="stylesheet" type="text/css">
+<link href="../css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/refresh.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/groupbuydetail.js"></script>
+<script type="text/javascript" src="../js/seckill.js"></script>
+<script type="text/javascript" src="../js/coupon.js"></script>
+<script type="text/javascript" src="../js/book.js"></script>
+<script type="text/javascript" src="../js/shop.js"></script>
+<script type="text/javascript" src="../js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/mu-mobi/js/timer.js?date=new Date()"></script>
+
+<script type="text/javascript">
+var refreshStatus = function(){
+		var options = {
+			    url:"member/refreshInfo.action;jsessionid=B7F995F1C637084BC9F0C2C87A8CFB02",
+				dataType:'json',
+				error:function(a,b){
+					//alert("用户信息刷新失败，请重试！");
+				},
+				success: function(data) {
+					if(!data.phoneno){
+						$.mobile.activePage.find("#loginDiv").html("<a data-transition='slide' class='cwhite' rel='external' href='HTMLLoginServlet'>登录</a>&nbsp;|&nbsp;<a  class='cwhite' data-ajax=\"false\" data-transition=\"slide\" href=\"../member/registerPage.action@skyarmlogin=0&reUrl=aHR0cDovL20uYzM2NS5jb20vbXUtbW9iaS9pbmRleC5hY3Rpb24_2FcHQ9cHBz\">注册</a>");
+					}else{
+						var nick ;
+						if(data.nickname){
+							nick = data.nickname;
+						}else{
+							nick = data.phoneno ;
+						}
+						$.mobile.activePage.find("#loginDiv").html("您好，"+nick+" | <a data-transition='slide'  class='cwhite' href='../member/accountGroupManage.action@currencyKind=12'>个人中心</a> | <a data-transition='slide'  class='cwhite' href='../../mucart/h5/toCartOrderList.action'>购物车</a> | <a id='logouA'  class='cwhite' href='javascript:logout(\"others\",\";jsessionid=B7F995F1C637084BC9F0C2C87A8CFB02\");'>退出</a>");
+					}	
+				}
+		};
+		$.ajax(options);
+}
+
+
+$(document).delegate('#home','pageshow',
+      function(){
+          refreshStatus();
+      }
+);
+</script><link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var jssessionid=';jsessionid=B7F995F1C637084BC9F0C2C87A8CFB02';
+
+</script>
+
+
+
+</head>
+<body>
+
+
+
+
+<div data-role="page"> 
+<!-- 页头 -->
+<div class="top">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="80px">
+        <a href="javascript:window.history.back();" class="top-return" data-transition="slide">返回</a>
+        </td>
+        <td class="top_title">秒杀</td>        
+        <td class="user">
+        <!--
+        	<a href="http://m.c365.com/mu-mobi/member/orderVerify.action;jsessionid=B7F995F1C637084BC9F0C2C87A8CFB02"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>
+        	<a href="javascript:showUserHome();"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>  
+        	-->
+        	<a href="javascript:showUserHome();"><img src="../../images/caidan.png"></a>  
+        </td>
+      </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+var showUserHome = function(){
+		member_center_menu();
+};
+
+</script>
+
+<script type="text/javascript">
+var member_center_menu = function(){
+var scrollHeight=document.body.scrollHeight;
+	$.mobile.activePage.find('#leftmenumask').show();
+	$.mobile.activePage.find('#left_menu_in').toggle('slow');
+	$.mobile.activePage.find('#left_menu_in').css("top:10");
+	
+}
+var leftsearch = function(){
+  var leftkeywords=$.mobile.activePage.find("#leftkeywords").val();
+  var leftsearchKind=$.mobile.activePage.find("#leftsearchKind").val();
+  if(!leftkeywords){
+    alert("请输入关键字");
+    $.mobile.activePage.find("#leftkeywords").focus();
+	return false;
+  }
+  window.location.href="../search.action@lsk=1&searchKind="+leftsearchKind+"&keywords="+leftkeywords;
+}
+</script>
+<div class="left_menu" style="z-index:9999;">
+   <div id="left_menu_in" style="display:none;z-index:9999;" class="left_menu_in">
+     <ul>
+      <li>
+          <div class="left_search"><input class="left_search_ipt" id="leftkeywords" name="leftkeywords" type="text" value="" maxlength="64"></div>
+          <div class="left_search_btn"><input class="left_search_btn2" name="" type="button" onclick="leftsearch();"></div>
+          <input type="hidden" id="leftsearchKind" name="searchKind" value="2" />
+       </li>
+        <li><a data-ajax="false" data-transition="slide" rel="external" href="../HTMLLoginServlet" >登录</a></li>
+        <li><a data-transition="slide"  href="../member/registerPage.action">注册</a></li>
+	<li><a data-transition="slide"  href="../index.action">晋优惠首页</a></li>
+     </ul>
+     
+   </div>
+   
+   <div class="popup" style="display:none;">
+     <a href="javascript:member_center_menu();"><img src="../images/tang_a.png"></a>
+   </div>
+ </div>
+<div id="leftmenumask" style="height:2980px;display:none;top:100;" data-role="none" onclick="leftclick();"></div>
+
+  
+ <script type="text/javascript">
+
+var now_date = new Date().getTime();
+var time_id = "43309";
+var login_url = "../../../login.c365.com/mu-sso/servlet/Html5Login@callback=http_253A_252F_252Fm.c365.com_252Fmu-mobi_252Fseckillnpublish_252FquerySeckillByID.action%3FseckillTimeID%3D43309";
+
+
+var set_center_sk = function (obj) { 
+} 
+
+</script>
+  
+  
+  
+  
+		<div class="tuan-detail">
+    		<p class="area_b"><span>太原(小店区)</span></p>
+		  <h1><strong>【三店通用】3月6日—3月15日10元秒杀双双尚品梦特娇130D纤维连裤袜500份！</strong></h1>
+		  <div class="product-pic"> <em>
+          		1.0
+          	折</em>
+		  		<img src="http://183.203.16.186:443//seckill/20140306/92701394074052245.jpg" width="294" height="186" />
+		   </div>
+		  <div class="price-box">
+		    <div class="btn-tuan">&yen;<strong>
+          			10
+          	</strong>
+		    	<em id="seckill_status_btn_id">
+								<input name="" type="button" value="即将开始" data-role="none" />
+		    </em>
+		   </div>
+		    
+		    <!-- msg window -->
+		    <div id="tuan_ok">
+			    <h2 class="text-center cgreen"><span id="result">秒杀成功！</span></h2>
+			    <p class="text-center"><span id="msg">请到个人账户中查看秒杀结果。</span></p>
+			    <p class="text-center"><input id="closeMsg" name="" type="button" value="我知道了" onClick="$.mobile.activePage.find('#tuan_ok').hide();" data-role="none" /></p>
+		    </div>
+		    
+		    
+		    <div class="tuan-price">
+		      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+		        <tr>
+		          <td>原价</td>
+		          <td>折扣</td>
+		          <td>节省</td>
+		        </tr>
+		        <tr>
+		          <td><del>￥98</del></td>
+		          <td>
+		          	￥
+		          		1.0折
+		          </td>
+		          <td>￥
+		          		88
+		        </tr>
+		      </table>
+		    </div>
+		  </div>
+		  
+    <div  class="price_c" >
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr>
+            <td width="150" align="center">VIP会员价</td>
+            <td width="92" align="center">会员价</td>
+            <td align="center"></td>
+          </tr>
+          <tr class="col">
+            <td align="center"><strong class="fs16 cred">
+          		￥10
+				</strong></td>
+            <td align="center"><strong class="fs16 corange">
+	      		----
+			</strong></td>
+            <td align="center"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+		  <div class="time-box">
+		 	<div class="left">  
+								<p class="cgreen">请稍等，时间还没到</p>
+		    <p><span class="fb f20 cred" id="subCount">0</span>人成功参加秒杀</p>
+		  	</div>
+		  <div class="right">
+			   		 	<p>距离开始还有：<br/><span id="time43309" class="time43309" class="cred">
+		       		<script type="text/javascript">
+		       			timerUtil(56485964,'.time43309');
+		       			$(".time43309").addClass("f14");
+		       		</script>
+		  </div>
+		 </div>
+		  <div class="shareto">&nbsp;
+		  <span id="showFavorite">
+		  		<a href="javascript:faverateseckill(43309,'../default.htm','../../../login.c365.com/mu-sso/servlet/Html5Login@callback=http_253A_252F_252Fm.c365.com_252Fmu-mobi_252Fseckillnpublish_252FquerySeckillByID.action%3FseckillTimeID%3D43309');" >收藏</a>  	
+		  	</span>
+		  	<!--
+		  	<span><a href="#">新浪</a></span>
+		  	<span><a href="#">腾讯</a></span>
+		  	<span><a href="#">人人</a></span>
+		  	-->
+		  </div>
+		</div>    
+		<article class="sale-text">	
+			 <section class="itr-img">
+			 	<h2>详细信息</h2>
+				<p style="text-align:center;"><strong><span style="font-size:20px;">【三店通用——双双尚品】</span></strong><br /></p><p style="text-align:center;"><strong><span style="font-size:20px;"><br /></span></strong></p><h1 label="标题居左" classname="undefined" style="font-size:32px;border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;margin:0px 0px 10px;"><strong><span style="font-size:20px;"><br /></span></strong></h1><p style="text-align:justify;"><strong><span style="font-size:20px;"><img src="http://183.203.16.186:443//seckill/20140305/93971393986958395.jpg" title="特别提示.jpg" /><br /></span></strong></p><p style="text-align:justify;"><strong><span style="font-size:20px;"></span></strong></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;color:#ff0000;">秒杀时间：2014年3月6日——2014年3月15日每日15:30秒杀50份！</span></strong></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;">营业时间：</span></strong><span style="font-size:14px;">9:00—18:00</span></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;">商家地址：</span></strong></p><p style="line-height:1.75em;"><span style="font-size:14px;">平阳路店：平阳路新康龙商城五层双双商品袜店 &nbsp; &nbsp; &nbsp; 电话：13333513444</span></p><p style="line-height:1.75em;"><span style="font-size:14px;">水西关店：水西关南街康龙商城阁14号双双商品袜店 &nbsp; 电话：5034190909</span></p><p style="line-height:1.75em;"><span style="font-size:14px;">义 井 店：义井和平南路小学往南50米 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;电话：18635193939</span></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;color:#ff0000;">消费有效期：2014年3月6日——2014年3月20日</span></strong></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;color:#ff0000;"><br /></span></strong></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;color:#ff0000;"><img src="http://183.203.16.186:443//seckill/20140305/48611393987161088.jpg" title="vip1.jpg" /><br /></span></strong></p><h1 label="标题居左" classname="undefined" style="font-size:32px;border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;margin:0px 0px 10px;"><strong><span style="font-size:14px;color:#ff0000;"><br /></span></strong></h1><p style="line-height:1.75em;"><strong><span style="font-size:14px;color:#ff0000;"><img src="http://183.203.16.186:443//seckill/20140305/58181393987013470.jpg" title="活动详情.jpg" /><br /></span></strong></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;color:#ff0000;"></span></strong></p><p style="line-height:1.75em;"><strong><span style="color:#ff0000;font-size:14px;">【三店通用】10元秒杀！原价98元的双双尚品梦特娇130D吸湿快干功能纤维连裤袜！</span></strong></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;">温馨提示：</span></strong><span style="font-size:14px;">梦特娇130D吸湿快干功能纤维连裤袜均为黑色、均码；</span></p><p style="line-height:1.75em;"><span style="font-size:14px;line-height:../1.75em;"></span></p><p><img src="http://183.203.16.186:443//seckill/20140305/84941393987178702.jpg" title="01.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20140305/20241393987178735.jpg" title="02.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20140305/4021393987178786.jpg" title="03..jpg" style="float:none;" /></p><h1 label="标题居左" classname="undefined" style="font-size:32px;border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;margin:0px 0px 10px;"><br /></h1><p><img src="http://183.203.16.186:443//seckill/20140305/70321393987074397.jpg" title="商家介绍.jpg" /><br /></p><p>双双尚品主要经营各种袜子以及内衣产品等。<br /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20140305/37801393987204792.jpg" title="04.jpg" /><br /></p><h1 label="标题居左" classname="undefined" style="font-size:32px;border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;margin:0px 0px 10px;"><br /></h1><p><img src="http://183.203.16.186:443//seckill/20140305/64221393987114547.jpg" title="法宝P.jpg" /><br /></p><p>关注12580电子优惠券官方微信，优惠惊喜尽在掌控！<br /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20140305/19251393987245013.jpg" title="手机.jpg" /></p><p><br /></p>
+			</section>
+		 <section>
+		    	<h3>购买须知</h3>
+		       <p><span style="font-size:14px;">（1）无须提前预约</span></p><p><span style="font-size:14px;">（2）节假日可用</span></p><p><span style="font-size:14px;">（3）每个ID限购一份(凭证转发无效)</span></p><p><span style="font-size:14px;">（4）请在有效期内使用，过期无效</span></p><p><span style="font-size:14px;">（5）不与店内其他优惠同享</span></p><p><span style="font-size:14px;">（7）秒杀商品不找零、不兑现</span></p>
+		 </section> 	    
+		<section>
+	    	<h3>商家详情</h3>
+	    	名称：双双尚品<br/>
+	    	地址：平阳路新康隆五层二道十二号双双尚品袜店<br/>
+	    	电话：13007025152<br/>
+	    	公交：乘坐813路、39路、807路新康隆商城下车<br/>
+	    	
+	    </section>
+		    		
+		</article>
+		<article class="comment" id="Mycomment">
+			<script type="text/javascript">
+				showcomment(793,'../');
+			</script>
+			<h2>商品评价</h2>
+			<div id="commentdiv">
+			<!--
+				<a data-transition="slide" href="http://m.c365.com/mu-mobi//seckillnpublish/addComment.action;jsessionid=B7F995F1C637084BC9F0C2C87A8CFB02?seckillTimeId=43309" id="gotocoment"></a>
+		    	<em><input name="" type="button" value="发表点评" onclick="$('#gotocoment').click(); " data-role="none" /></em>
+			-->
+		 </div>
+		</article>
+<footer>
+    <div class="footer_nav"><a href="../wap/index.action" data-ajax="false">简版</a> 丨 <a href="../downClient.action" data-ajax="false">客户端</a></div>
+    <div class="footer_bottom">
+      <p>晋优惠[晋ICP备11002219]</p>
+        <p>中国移动通信集团山西有限公司</p>
+    </div>
+  </footer>
+<img style="display:none;" src="../../../hm.baidu.com/hm.gif@si=b0c1b8c5ce6123a5ae92c8ffa9b7582f&et=0&nv=0&st=4&lt=1394293642&v=wap-2-0.3&rnd=1877994002" width="0" height="0"  />
+</div>
+
+
+
+
+
+</body>
+</html>

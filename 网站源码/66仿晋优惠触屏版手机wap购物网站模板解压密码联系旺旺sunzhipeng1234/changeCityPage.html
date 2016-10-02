@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=173300C3F98828DDF69C11E2C998292F";
+</script><title>晋优惠</title>
+
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<link href="css/jq.css" rel="stylesheet" type="text/css">
+<link href="css/manage.css" rel="stylesheet" type="text/css">
+<link href="css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/refresh.css" />
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/groupbuydetail.js"></script>
+<script type="text/javascript" src="js/seckill.js"></script>
+<script type="text/javascript" src="js/coupon.js"></script>
+<script type="text/javascript" src="js/book.js"></script>
+<script type="text/javascript" src="js/shop.js"></script>
+<script type="text/javascript" src="js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/js/timer.js?date=new Date()"></script>
+
+<script type="text/javascript">
+var refreshStatus = function(){
+		var options = {
+			    url:"member/refreshInfo.action;jsessionid=173300C3F98828DDF69C11E2C998292F",
+				dataType:'json',
+				error:function(a,b){
+					//alert("用户信息刷新失败，请重试！");
+				},
+				success: function(data) {
+					if(!data.phoneno){
+						$.mobile.activePage.find("#loginDiv").html("<a data-transition='slide' class='cwhite' rel='external' href='HTMLLoginServlet'>登录</a>&nbsp;|&nbsp;<a  class='cwhite' data-ajax=\"false\" data-transition=\"slide\" href=\"member/registerPage.action@skyarmlogin=0&reUrl=aHR0cDovL20uYzM2NS5jb20vbXUtbW9iaS9pbmRleC5hY3Rpb24_2FcHQ9cHBz\">注册</a>");
+					}else{
+						var nick ;
+						if(data.nickname){
+							nick = data.nickname;
+						}else{
+							nick = data.phoneno ;
+						}
+						$.mobile.activePage.find("#loginDiv").html("您好，"+nick+" | <a data-transition='slide'  class='cwhite' href='member/accountGroupManage.action@currencyKind=12'>个人中心</a> | <a data-transition='slide'  class='cwhite' href='mucart/h5/toCartOrderList.action'>购物车</a> | <a id='logouA'  class='cwhite' href='javascript:logout(\"others\",\";jsessionid=173300C3F98828DDF69C11E2C998292F\");'>退出</a>");
+					}	
+				}
+		};
+		$.ajax(options);
+}
+
+
+$(document).delegate('#home','pageshow',
+      function(){
+          refreshStatus();
+      }
+);
+</script><script type="text/javascript">
+var jssessionid=';jsessionid=173300C3F98828DDF69C11E2C998292F';
+
+</script>
+</head>
+<body>
+<input type="hidden" id="jsessionid" value=";jsessionid=173300C3F98828DDF69C11E2C998292F"/>
+<div data-role="page" id="page_gbList"> 
+<!-- 页头 -->
+<div class="top">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="80px">
+        <a href="javascript:window.history.back();" class="top-return" data-transition="slide">返回</a>
+        </td>
+        <td class="top_title">地区选择</td>        
+        <td class="user">
+        <!--
+        	<a href="http://m.c365.com/member/orderVerify.action;jsessionid=173300C3F98828DDF69C11E2C998292F"><img src="http://m.c365.com//images/user.png"></a>
+        	<a href="javascript:showUserHome();"><img src="http://m.c365.com//images/user.png"></a>  
+        	-->
+        	<a href="javascript:showUserHome();"><img src="images/caidan.png"></a>  
+        </td>
+      </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+var showUserHome = function(){
+		member_center_menu();
+};
+
+</script>
+
+<script type="text/javascript">
+var member_center_menu = function(){
+var scrollHeight=document.body.scrollHeight;
+	$.mobile.activePage.find('#leftmenumask').show();
+	$.mobile.activePage.find('#left_menu_in').toggle('slow');
+	$.mobile.activePage.find('#left_menu_in').css("top:10");
+	
+}
+var leftsearch = function(){
+  var leftkeywords=$.mobile.activePage.find("#leftkeywords").val();
+  var leftsearchKind=$.mobile.activePage.find("#leftsearchKind").val();
+  if(!leftkeywords){
+    alert("请输入关键字");
+    $.mobile.activePage.find("#leftkeywords").focus();
+	return false;
+  }
+  window.location.href="search.action@lsk=1&searchKind="+leftsearchKind+"&keywords="+leftkeywords;
+}
+</script>
+<div class="left_menu" style="z-index:9999;">
+   <div id="left_menu_in" style="display:none;z-index:9999;" class="left_menu_in">
+     <ul>
+      <li>
+          <div class="left_search"><input class="left_search_ipt" id="leftkeywords" name="leftkeywords" type="text" value="" maxlength="64"></div>
+          <div class="left_search_btn"><input class="left_search_btn2" name="" type="button" onclick="leftsearch();"></div>
+          <input type="hidden" id="leftsearchKind" name="searchKind" value="0" />
+       </li>
+        <li><a data-ajax="false" data-transition="slide" rel="external" href="mu-mobi//HTMLLoginServlet" >登录</a></li>
+        <li><a data-transition="slide"  href="member/registerPage.action">注册</a></li>
+	<li><a data-transition="slide"  href="index.action">晋优惠首页</a></li>
+     </ul>
+     
+   </div>
+   
+   <div class="popup" style="display:none;">
+     <a href="javascript:member_center_menu();"><img src="images/tang_a.png"></a>
+   </div>
+ </div>
+<div id="leftmenumask" style="height:2980px;display:none;top:100;" data-role="none" onclick="leftclick();"></div>
+
+
+<div id="tuan" class="sale_list">
+
+<div id="wrapper_gb" class="wrapper" style="top:80px">
+	<div id="scroller_gb">
+		
+	  <div class="city">
+      <div class="city-li"><a class="city-li-b" href="#" onclick="currentCityCilck(this);return false;">当前城市</a></div>
+	      <ul id="current_city_id">
+	        <li class="city-in" onclick="javascript:window.history.back();">太原</li>
+	      </ul>
+      <div class="city-li"><a class="city-li-b" href="#" onclick="otherCityCilck(this);return false;">其他城市</a></div>
+      <ul id="other_city_id">
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10011')">大同</li>
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10023')">阳泉</li>
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10029')">长治</li>
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10043')">晋城</li>
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10050')">朔州</li>
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10057')">晋中</li>
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10069')">运城</li>
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10083')">忻州</li>
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10098')">临汾</li>
+		        <li class="city-in" onclick="javascript:changeCurrentCity('10116')">吕梁</li>
+	  </ul>
+ 	</div>
+
+	<script type="text/javascript">
+
+function currentCityCilck(dom){
+	if($('#current_city_id').is(":hidden")){
+		$('#current_city_id').show();
+		$(dom).removeClass('city-li-a');
+		$(dom).addClass('city-li-b');
+	}else{
+		$('#current_city_id').hide();
+		$(dom).removeClass('city-li-b');
+		$(dom).addClass('city-li-a');
+	}
+}
+
+function otherCityCilck(dom){
+	if($('#other_city_id').is(":hidden")){
+		$('#other_city_id').show();
+		$(dom).removeClass('city-li-a');
+		$(dom).addClass('city-li-b');
+	}else{
+		$('#other_city_id').hide();
+		$(dom).removeClass('city-li-b');
+		$(dom).addClass('city-li-a');
+	}
+}
+
+function changeCurrentCity(cityid){
+	window.location.href='cityid='+cityid;
+}
+
+</script>
+	
+</div>
+</body>
+</html>

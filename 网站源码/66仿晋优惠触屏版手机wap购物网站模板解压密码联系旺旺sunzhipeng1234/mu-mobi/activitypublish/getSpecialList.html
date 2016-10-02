@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=1E6FD6536D8F1A69EC418D696187E9BA";
+</script><title>仿晋优惠触屏版手机wap购物网站模板专题列表-pppf.taobao.com整理搜集仅用于学习</title>
+<script type="text/javascript" src="../js/special.js"></script>
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<link href="../css/jq.css" rel="stylesheet" type="text/css">
+<link href="../css/manage.css" rel="stylesheet" type="text/css">
+<link href="../css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/refresh.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/groupbuydetail.js"></script>
+<script type="text/javascript" src="../js/seckill.js"></script>
+<script type="text/javascript" src="../js/coupon.js"></script>
+<script type="text/javascript" src="../js/book.js"></script>
+<script type="text/javascript" src="../js/shop.js"></script>
+<script type="text/javascript" src="../js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/mu-mobi/js/timer.js?date=new Date()"></script>
+
+<script type="text/javascript">
+var refreshStatus = function(){
+		var options = {
+			    url:"member/refreshInfo.action;jsessionid=1E6FD6536D8F1A69EC418D696187E9BA",
+				dataType:'json',
+				error:function(a,b){
+					//alert("用户信息刷新失败，请重试！");
+				},
+				success: function(data) {
+					if(!data.phoneno){
+						$.mobile.activePage.find("#loginDiv").html("<a data-transition='slide' class='cwhite' rel='external' href='HTMLLoginServlet'>登录</a>&nbsp;|&nbsp;<a  class='cwhite' data-ajax=\"false\" data-transition=\"slide\" href=\"../member/registerPage.action@skyarmlogin=0&reUrl=aHR0cDovL20uYzM2NS5jb20vbXUtbW9iaS9pbmRleC5hY3Rpb24_2FcHQ9cHBz\">注册</a>");
+					}else{
+						var nick ;
+						if(data.nickname){
+							nick = data.nickname;
+						}else{
+							nick = data.phoneno ;
+						}
+						$.mobile.activePage.find("#loginDiv").html("您好，"+nick+" | <a data-transition='slide'  class='cwhite' href='../member/accountGroupManage.action@currencyKind=12'>个人中心</a> | <a data-transition='slide'  class='cwhite' href='../../mucart/h5/toCartOrderList.action'>购物车</a> | <a id='logouA'  class='cwhite' href='javascript:logout(\"others\",\";jsessionid=1E6FD6536D8F1A69EC418D696187E9BA\");'>退出</a>");
+					}	
+				}
+		};
+		$.ajax(options);
+}
+
+
+$(document).delegate('#home','pageshow',
+      function(){
+          refreshStatus();
+      }
+);
+</script><link href="../css/css.css" rel="stylesheet" type="text/css">
+<link href="../css/manage.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div data-role="page" id="page_spList">
+<!-- 页头 -->
+<div class="top">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="80px">
+        <a href="javascript:window.history.back();" class="top-return" data-transition="slide">返回</a>
+        </td>
+        <td class="top_title">专题活动</td>        
+        <td class="user">
+        <!--
+        	<a href="http://m.c365.com/mu-mobi/member/orderVerify.action;jsessionid=1E6FD6536D8F1A69EC418D696187E9BA"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>
+        	<a href="javascript:showUserHome();"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>  
+        	-->
+        	<a href="javascript:showUserHome();"><img src="../../images/caidan.png"></a>  
+        </td>
+      </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+var showUserHome = function(){
+		member_center_menu();
+};
+
+</script>
+
+<script type="text/javascript">
+var member_center_menu = function(){
+var scrollHeight=document.body.scrollHeight;
+	$.mobile.activePage.find('#leftmenumask').show();
+	$.mobile.activePage.find('#left_menu_in').toggle('slow');
+	$.mobile.activePage.find('#left_menu_in').css("top:10");
+	
+}
+var leftsearch = function(){
+  var leftkeywords=$.mobile.activePage.find("#leftkeywords").val();
+  var leftsearchKind=$.mobile.activePage.find("#leftsearchKind").val();
+  if(!leftkeywords){
+    alert("请输入关键字");
+    $.mobile.activePage.find("#leftkeywords").focus();
+	return false;
+  }
+  window.location.href="../search.action@lsk=1&searchKind="+leftsearchKind+"&keywords="+leftkeywords;
+}
+</script>
+<div class="left_menu" style="z-index:9999;">
+   <div id="left_menu_in" style="display:none;z-index:9999;" class="left_menu_in">
+     <ul>
+      <li>
+          <div class="left_search"><input class="left_search_ipt" id="leftkeywords" name="leftkeywords" type="text" value="" maxlength="64"></div>
+          <div class="left_search_btn"><input class="left_search_btn2" name="" type="button" onclick="leftsearch();"></div>
+          <input type="hidden" id="leftsearchKind" name="searchKind" value="" />
+       </li>
+        <li><a data-ajax="false" data-transition="slide" rel="external" href="../HTMLLoginServlet" >登录</a></li>
+        <li><a data-transition="slide"  href="../member/registerPage.action">注册</a></li>
+     <li>
+     <a href="../changeCityPage.action" data-role="button">切换城市
+     <span style="float:right;">晋优惠太原站&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+     </li>
+	<li><a data-transition="slide"  href="../index.action">晋优惠首页</a></li>
+     </ul>
+     
+   </div>
+   
+   <div class="popup" style="display:none;">
+     <a href="javascript:member_center_menu();"><img src="../images/tang_a.png"></a>
+   </div>
+ </div>
+<div id="leftmenumask" style="height:2980px;display:none;top:100;" data-role="none" onclick="leftclick();"></div>
+
+  <div class="active_label">
+      <ul>
+		<li><a data-transition="slide" rel="external" class="select" href="../activitypublish/getSpecialList.action" onclick="getSpecialListBykind('../default.htm',0)">全部活动</a></li>
+		<li><a data-transition="slide" rel="external" href="../activitypublish/getSpecialList.action@specialkind=1" onclick="getSpecialListBykind('../default.htm',1)">进行中</a></li>
+		<li><a data-transition="slide" rel="external" href="../activitypublish/getSpecialList.action@specialkind=2" onclick="getSpecialListBykind('../default.htm',2)">往期活动</a></li>
+		<li><a data-transition="slide" rel="external" href="../activitypublish/getSpecialList.action@specialkind=3" onclick="getSpecialListBykind('../default.htm',3)">即将上线</a></li>
+    </ul>
+    </div>
+<div class="active_main" >
+  <div id="wrapper_sp" class="wrapper" style="top:180px">
+	<div id="scroller_sp">
+		<div id="pullDown" style="display:none">
+			<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+		</div> 
+   <ul id="specialList" data-page="1" data-pagaTotal="1">
+       <li>
+      <div class="active_pic" >
+        <p>
+						  <a data-ajax="false"  href="../activitypublish/getSpecialByid.html" class="ui-link">
+						      <img src="http://183.203.16.186:443//specailActivities/201311/ec4628cc-32cc-48fe-931e-21885e2a2c4b.jpg"style="width:294px;height:111px"/>
+						  </a>
+        </p>
+        <p>活动时间：2013-11-13 至 2013-12-02</p>
+      </div>
+      </li>
+    
+       <li>
+      <div class="active_pic" >
+        <p>
+						  <a data-transition="slide" href="../activitypublish/getSpecialByid.action@hyperLink=shejianshang_2Findex.ftl" class="ui-link">
+						      <img src="http://183.203.16.186:443//specailActivities/201310/db27a3d1-ca43-4940-866c-fb976ad8e6a2.jpg"style="width:294px;height:111px"/>
+						  </a>
+        </p>
+        <p>活动时间：2013-10-18 至 2013-11-30</p>
+      </div>
+      </li>
+    
+    </ul>
+     <input type="hidden" value="1" id="hiddenpage" name="hiddenpage"/>
+    <input type="hidden" value="1" id="pageTotal" name="pageTotal"/>
+        <div id="pullUp">
+            <div class="to-update">
+			  <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多。。。</span>
+			</div>
+		</div>
+<footer>
+    <div class="footer_nav"><a href="../wap/index.action" data-ajax="false">简版</a> 丨 <a href="../downClient.action" data-ajax="false">客户端</a></div>
+    <div class="footer_bottom">
+      <p>晋优惠[晋ICP备11002219]</p>
+        <p>中国移动通信集团山西有限公司</p>
+    </div>
+  </footer>
+<img style="display:none;" src="../../../hm.baidu.com/hm.gif@si=b0c1b8c5ce6123a5ae92c8ffa9b7582f&et=0&nv=0&st=4&lt=1394293550&v=wap-2-0.3&rnd=740461166" width="0" height="0"  />
+  	</div>
+  </div>
+  </div>
+</div>
+	<script type="text/javascript">
+var myScroll_sp,
+	pullDownEl_sp, pullDownOffset_sp,
+	pullUpEl_sp, pullUpOffset_sp,
+	generatedCount_sp = 0;
+
+function sp_pullDownAction () {
+	//修改些函数使用ajax查询数据 注意调用ajax成功后要调用  myScroll.refresh();	
+	//这里不需要查询数据
+	pullDownEl_sp.querySelector('.pullDownLabel').innerHTML = '没有数据更新...';		
+	sp_resultFunction();
+}
+
+function sp_resultFunction(isEnd){
+    if(myScroll_sp!=null){
+      myScroll_sp.refresh();
+    }
+    if(isEnd){
+      pullUpEl_sp.querySelector('.pullUpLabel').innerHTML = '没有更多。。。';
+    }
+}
+
+function sp_pullUpAction () {
+	//修改些函数使用ajax查询数据 注意调用ajax成功后要调用  scroll.refresh();	
+	queryMoreSpecial('../default.htm',sp_resultFunction,'10000','0');
+}
+
+function sp_destroy(){
+    if(myScroll_sp!=null){
+      myScroll_sp.destroy();
+    }
+}
+
+
+function ddsp_loaded() {
+	var $wrapper_sp = $('#wrapper_sp');
+    pullDownEl_sp = $wrapper_sp.find('#pullDown').get(0);
+	pullDownOffset_sp = pullDownEl_sp.offsetHeight;
+	pullUpEl_sp = $wrapper_sp.find('#pullUp').get(0);	
+	pullUpOffset_sp = pullUpEl_sp.offsetHeight;
+	
+	
+	myScroll_sp = new iScroll('wrapper_sp', {
+		useTransition: true,
+		topOffset: pullDownOffset_sp,
+		onRefresh: function () {
+			if (pullDownEl_sp.className.match('loading')) {
+				pullDownEl_sp.className = '';
+				pullDownEl_sp.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+				pullUpEl_sp.className = '';
+				pullUpEl_sp.querySelector('.pullUpLabel').innerHTML = '上拉加载更多。。。';
+			} else if (pullUpEl_sp.className.match('loading')) {
+				pullUpEl_sp.className = '';
+				pullUpEl_sp.querySelector('.pullUpLabel').innerHTML = '上拉加载更多。。。';
+			}
+		},
+		onScrollMove: function () {
+			if (this.y > 5 && !pullDownEl_sp.className.match('flip')) {
+				pullDownEl_sp.className = 'flip';
+				pullDownEl_sp.querySelector('.pullDownLabel').innerHTML = 'Release to refresh...';
+				this.minScrollY = 0;
+			} else if (this.y < 5 && pullDownEl_sp.className.match('flip')) {
+				pullDownEl_sp.className = '';
+				pullDownEl_sp.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+				this.minScrollY = -pullDownOffset_gb;
+			//} else if (this.y < (this.maxScrollY - 5) && !pullUpEl_sp.className.match('flip')) {
+			} else if (this.y < (this.maxScrollY - 5)) {
+				pullUpEl_sp.className = 'flip';
+				pullUpEl_sp.querySelector('.pullUpLabel').innerHTML = '松开刷新。。。';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl_sp.className.match('flip')) {
+				pullUpEl_sp.className = '';
+				pullUpEl_sp.querySelector('.pullUpLabel').innerHTML = '上拉加载更多。。。';
+				this.maxScrollY = pullUpOffset_gb;
+			}
+		},
+		onScrollEnd: function () {
+			if (pullDownEl_sp.className.match('flip')) {
+				pullDownEl_sp.className = 'loading';
+				pullDownEl_sp.querySelector('.pullDownLabel').innerHTML = '正在加载。。。';				
+				sp_pullDownAction();	// Execute custom function (ajax call?)
+			} else if (pullUpEl_sp.className.match('flip')) {
+				pullUpEl_sp.className = 'loading';
+				pullUpEl_sp.querySelector('.pullUpLabel').innerHTML = '正在加载。。。';				
+				sp_pullUpAction();	// Execute custom function (ajax call?)
+			}
+		}
+	});
+	setTimeout(function () { document.getElementById('wrapper_sp').style.left = '0'; }, 800);
+	sp_resultFunction();
+}
+//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+//document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+//jquery mobile转场后事件
+	$("#page_spList").bind('pageshow',ddsp_loaded);
+	$("#page_spList").bind('pagehide',sp_destroy);
+	
+</script>
+</body>
+</html>

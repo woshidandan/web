@@ -1,0 +1,175 @@
+/*!Css widget/slider/slider.css*/
+.ui-slider { position: relative; -webkit-user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+.ui-slider-group { overflow: hidden; position: relative; white-space: nowrap; -webkit-transform: translateZ(0); }
+.ui-slider-item { height: 100%; text-align: center; position: relative; float: left; overflow: hidden; -webkit-box-sizing: border-box; }
+.ui-slider-dots { position: absolute; bottom: 4px; left: 0; width: 100%; height: 20px; text-align: center; }
+.ui-slider-dots b { display: inline-block; height: 8px; width: 8px; border-radius: 10px; background-color: #fff; margin: 0 4px; box-shadow: 0 0 2px #666; }
+.ui-slider-dots b.ui-state-active { background-color: #9C0; }
+/*!Css widget/tabs/tabs.css*/
+.ui-tabs { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+.ui-tabs-nav { }
+.ui-tabs-nav li{}
+.ui-tabs-nav li a{}
+.ui-tabs-nav li.ui-state-active a{ }
+.ui-tabs-content { position: relative; min-height: 100px; width: 100%; -webkit-box-sizing: border-box; overflow: hidden; -webkit-transition: height 200ms ease-in-out; }
+.ui-tabs-content .ui-tabs-panel { display: none; position: absolute; top: 0; left: 0; width: 100%; -webkit-box-sizing: border-box; min-height: 100px; }
+.ui-tabs-panel { -webkit-transform: translateZ(0);padding-top:20px; }
+.ui-tabs-content .ui-tabs-panel.ui-state-active, .ui-viewport-transitioning .ui-tabs-panel.out { display: block; z-index: 1; }
+.ui-tabs-content .ui-tabs-panel.ui-state-active { z-index: 2; }
+/*!Css transitions.css*/
+.ui-viewport-transitioning .ui-panel { width: 100%; height: 100%; overflow: hidden; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.ui-viewport-transitioning .ui-loading { -webkit-animation-name: none; }
+.in { -webkit-animation-timing-function: ease-out; -webkit-animation-duration: 350ms; }
+.out { -webkit-animation-timing-function: ease-in; -webkit-animation-duration: 225ms; }
+@-webkit-keyframes slideinfromright {
+from {
+-webkit-transform:translateX(100%);
+}
+to {
+-webkit-transform:translateX(0);
+}
+}
+@-webkit-keyframes slideinfromleft {
+from {
+-webkit-transform:translateX(-100%);
+}
+to {
+-webkit-transform:translateX(0);
+}
+}
+@-webkit-keyframes slideouttoleft {
+from {
+-webkit-transform:translateX(0);
+}
+to {
+-webkit-transform:translateX(-100%);
+}
+}
+@-webkit-keyframes slideouttoright {
+from {
+-webkit-transform:translateX(0);
+}
+to {
+-webkit-transform:translateX(100%);
+}
+}
+.slide.out, .slide.in { -webkit-animation-timing-function: linear; -webkit-animation-duration: 350ms; }
+.slide.out { -webkit-animation-name: slideouttoleft; -webkit-transform: translateX(-100%); }
+.slide.in { -webkit-animation-name: slideinfromright; -webkit-transform: translateX(0); }
+.slide.out.reverse { -webkit-animation-name: slideouttoright; -webkit-transform: translateX(100%); }
+.slide.in.reverse { -webkit-animation-name: slideinfromleft; -webkit-transform: translateX(0); }
+/*!Css widget/toolbar/toolbar.css*/
+.ui-toolbar { width: 100%; z-index: 999; }
+.ui-toolbar-wrap { position: relative; }
+.ui-toolbar-placeholder { margin: 0; padding: 0; border: 0; overflow: visible; position: relative; }
+.ui-toolbar-title { height: 100%; }
+.ui-toolbar-left, .ui-toolbar-right { position: absolute; top: 0; height: 100%; }
+.ui-toolbar-left { left: 0; }
+.ui-toolbar-right { top: 3px; right: 0; }
+.ui-toolbar-left>* { display: inline-block; float: left; margin-right: 5px; text-align: center; }
+.ui-toolbar-right>* { display: inline-block; float: right; margin-right: 10px; text-align: center; }
+/*!Css widget/panel/panel.css*/
+.ui-panel { }
+.ui-panel-contentWrap { position: relative; z-index: 1; }
+.ui-panel.ui-panel-right { right: 0; }
+.ui-panel.ui-panel-left { left: 0; }
+.ui-panel.ui-panel-push { z-index: 999; }
+.ui-panel.ui-panel-overlay { z-index: 1001; }
+.ui-panel.ui-panel-reveal { z-index: 0; }
+.ui-panel-animate { -webkit-transition: -webkit-transform 350ms ease; }
+.ui-panel-dismiss { position: absolute; z-index: 1000; height: 100%; top: 0; -webkit-tap-highlight-color: rgba(0,0,0,0); }
+/*!Css widget/navigator/navigator.css*/
+.ui-scroller { padding: 0; margin: 0; display: inline-block; }
+.ui-scroller .ui-navigator-list li { display: table-cell; }
+.ui-scroller .ui-navigator-list { display: table; table-layout: fixed; width: auto; }
+.ui-scroller .ui-navigator-list li:last-child{padding-right:0;}
+.ui-loading {
+    width: 40px;
+    height: 40px;
+    text-indent: -10000px;
+    background: url('../images/ui-loading.png') 0 0 no-repeat;
+    -webkit-background-size: 40px 40px;
+    -webkit-animation-name: ui-loading-anim;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: step-start;
+}
+
+@-webkit-keyframes ui-loading-anim {
+	from {
+        -webkit-transform: rotate(0deg);
+    }
+    8.32% {
+        -webkit-transform: rotate(0deg);
+    }
+    8.33% {
+        -webkit-transform: rotate(30deg);
+    }
+    16.65% {
+        -webkit-transform: rotate(30deg);
+    }
+    16.66% {
+        -webkit-transform: rotate(60deg);
+    }
+    24.99% {
+        -webkit-transform: rotate(60deg);
+    }
+    25% {
+        -webkit-transform: rotate(90deg);
+    }
+    33.32% {
+        -webkit-transform: rotate(90deg);
+    }
+    33.33% {
+        -webkit-transform: rotate(120deg);
+    }
+    41.65% {
+        -webkit-transform: rotate(120deg);
+    }
+    41.66% {
+        -webkit-transform: rotate(150deg);
+    }
+    49.99% {
+        -webkit-transform: rotate(150deg);
+    }
+    50% {
+        -webkit-transform: rotate(180deg);
+    }
+    58.32% {
+        -webkit-transform: rotate(180deg);
+    }
+    58.33% {
+        -webkit-transform: rotate(210deg);
+    }
+    66.65% {
+        -webkit-transform: rotate(210deg);
+    }
+    66.66% {
+        -webkit-transform: rotate(240deg);
+    }
+    74.99% {
+        -webkit-transform: rotate(240deg);
+    }
+    75% {
+        -webkit-transform: rotate(270deg);
+    }
+    83.32% {
+        -webkit-transform: rotate(270deg);
+    }
+    83.33% {
+        -webkit-transform: rotate(300deg);
+    }
+    91.65% {
+        -webkit-transform: rotate(300deg);
+    }
+    91.66% {
+        -webkit-transform: rotate(330deg);
+    }
+    99.99% {
+        -webkit-transform: rotate(330deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+

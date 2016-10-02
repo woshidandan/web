@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=32B90D2B893A10706323D0529EE122E5";
+</script><title>仿晋优惠触屏版手机wap购物网站模板团购正文-pppf.taobao.com整理搜集仅用于学习</title>
+<meta name="keywords" content="环球约客自助餐,秒杀,自助火锅,太原,晋优惠" />
+<meta name="description" content="原价78元现价48元秒杀，环球约客" />
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<link href="../css/jq.css" rel="stylesheet" type="text/css">
+<link href="../css/manage.css" rel="stylesheet" type="text/css">
+<link href="../css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/refresh.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/groupbuydetail.js"></script>
+<script type="text/javascript" src="../js/seckill.js"></script>
+<script type="text/javascript" src="../js/coupon.js"></script>
+<script type="text/javascript" src="../js/book.js"></script>
+<script type="text/javascript" src="../js/shop.js"></script>
+<script type="text/javascript" src="../js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/mu-mobi/js/timer.js?date=new Date()"></script>
+
+<script type="text/javascript">
+var refreshStatus = function(){
+		var options = {
+			    url:"member/refreshInfo.action;jsessionid=32B90D2B893A10706323D0529EE122E5",
+				dataType:'json',
+				error:function(a,b){
+					//alert("用户信息刷新失败，请重试！");
+				},
+				success: function(data) {
+					if(!data.phoneno){
+						$.mobile.activePage.find("#loginDiv").html("<a data-transition='slide' class='cwhite' rel='external' href='HTMLLoginServlet'>登录</a>&nbsp;|&nbsp;<a  class='cwhite' data-ajax=\"false\" data-transition=\"slide\" href=\"../member/registerPage.action@skyarmlogin=0&reUrl=aHR0cDovL20uYzM2NS5jb20vbXUtbW9iaS9pbmRleC5hY3Rpb24_2FcHQ9cHBz\">注册</a>");
+					}else{
+						var nick ;
+						if(data.nickname){
+							nick = data.nickname;
+						}else{
+							nick = data.phoneno ;
+						}
+						$.mobile.activePage.find("#loginDiv").html("您好，"+nick+" | <a data-transition='slide'  class='cwhite' href='../member/accountGroupManage.action@currencyKind=12'>个人中心</a> | <a data-transition='slide'  class='cwhite' href='../../mucart/h5/toCartOrderList.action'>购物车</a> | <a id='logouA'  class='cwhite' href='javascript:logout(\"others\",\";jsessionid=32B90D2B893A10706323D0529EE122E5\");'>退出</a>");
+					}	
+				}
+		};
+		$.ajax(options);
+}
+
+
+$(document).delegate('#home','pageshow',
+      function(){
+          refreshStatus();
+      }
+);
+</script><link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var jssessionid=';jsessionid=32B90D2B893A10706323D0529EE122E5';
+</script>
+</head>
+<body>
+<div data-role="page" id="gb_describe"> 
+<!-- 页头 -->
+<div class="top">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="80px">
+        <a href="javascript:window.history.back();" class="top-return" data-transition="slide">返回</a>
+        </td>
+        <td class="top_title">团购</td>        
+        <td class="user">
+        <!--
+        	<a href="http://m.c365.com/mu-mobi/member/orderVerify.action;jsessionid=32B90D2B893A10706323D0529EE122E5"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>
+        	<a href="javascript:showUserHome();"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>  
+        	-->
+        	<a href="javascript:showUserHome();"><img src="../../images/caidan.png"></a>  
+        </td>
+      </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+var showUserHome = function(){
+		member_center_menu();
+};
+
+</script>
+
+<script type="text/javascript">
+var member_center_menu = function(){
+var scrollHeight=document.body.scrollHeight;
+	$.mobile.activePage.find('#leftmenumask').show();
+	$.mobile.activePage.find('#left_menu_in').toggle('slow');
+	$.mobile.activePage.find('#left_menu_in').css("top:10");
+	
+}
+var leftsearch = function(){
+  var leftkeywords=$.mobile.activePage.find("#leftkeywords").val();
+  var leftsearchKind=$.mobile.activePage.find("#leftsearchKind").val();
+  if(!leftkeywords){
+    alert("请输入关键字");
+    $.mobile.activePage.find("#leftkeywords").focus();
+	return false;
+  }
+  window.location.href="../search.action@lsk=1&searchKind="+leftsearchKind+"&keywords="+leftkeywords;
+}
+</script>
+<div class="left_menu" style="z-index:9999;">
+   <div id="left_menu_in" style="display:none;z-index:9999;" class="left_menu_in">
+     <ul>
+      <li>
+          <div class="left_search"><input class="left_search_ipt" id="leftkeywords" name="leftkeywords" type="text" value="" maxlength="64"></div>
+          <div class="left_search_btn"><input class="left_search_btn2" name="" type="button" onclick="leftsearch();"></div>
+          <input type="hidden" id="leftsearchKind" name="searchKind" value="1" />
+       </li>
+        <li><a data-ajax="false" data-transition="slide" rel="external" href="../HTMLLoginServlet" >登录</a></li>
+        <li><a data-transition="slide"  href="../member/registerPage.action">注册</a></li>
+	<li><a data-transition="slide"  href="../index.action">晋优惠首页</a></li>
+     </ul>
+     
+   </div>
+   
+   <div class="popup" style="display:none;">
+     <a href="javascript:member_center_menu();"><img src="../images/tang_a.png"></a>
+   </div>
+ </div>
+<div id="leftmenumask" style="height:2980px;display:none;top:100;" data-role="none" onclick="leftclick();"></div>
+
+  
+  <div class="tuan-detail">
+    		<p class="area_b"><span>太原(迎泽区)</span></p>
+	  <h1>【迎泽区】环球约客——自助餐！</h1>
+	  <div class="product-pic">
+	       <em>
+				¥6.2
+			折</em>
+	              <img src="http://183.203.16.186:443//groupbuy/20140305/74181394013204403.jpg" alt="【迎泽区】..." /> 
+	  </div>
+      <div class="price-box">
+		    <div class="btn-tuan">&yen;<strong>
+				48
+			</strong>
+		      <em>
+			         <input id="gbButton" name="" type="button" value="抢购" onClick="groupbuyit(2108,'../../../login.c365.com/mu-sso/servlet/Html5Login@callback=http_253A_252F_252Fm.c365.com_252Fmu-mobi_252Fgroupbuypublish_252FqueryGroupBuyByID.action%3FgroupbuyID%3D2108','#gbButton');" data-role="none"/>
+			     
+			     <input type="hidden" id="token" value=""/>
+			     <input type="hidden" id="common_exchangeHtml5URL" value="http://m.c365.com/mucart/memberh/exchangeList.action"/>
+			     <input type="hidden" id="basePath" value="http://m.c365.com/mu-mobi/"/>
+			     
+		      </em>
+		    </div>
+		    <!-- msg window -->
+		    <div id="tuan_ok">
+		    <h2 class="text-center cgreen" ><span id="result">团购成功！</span></h2>
+		    <p class="text-center" ><span id="msg">请到个人账户中查看优惠券。</span></p>
+		    <p class="text-center"><input id="closeMsg" name="" type="button" value="我知道了" onClick="gb_hideMsg();" data-role="none"></p>
+      </div>
+      <div class="tuan-price">
+	      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+	        <tr>
+	          <td>原价</td>
+	          <td>折扣</td>
+	          <td>节省</td>
+	        </tr>
+	        <tr>
+	          <td><del>&yen;78</del></td>
+	          <td>
+					 6.2折
+	          
+	         </td>
+	          <td>&yen;
+					 30
+			</td>
+	        </tr>
+	      </table>
+       </div>
+   </div>
+   
+   
+    <div  class="price_c" >
+      <table cellpadding="0" cellspacing="0" border="0">
+        <tbody>
+          <tr>
+            <td width="150" align="center">VIP会员价</td>
+            <td width="92" align="center">会员价</td>
+            <td align="center"></td>
+          </tr>
+          <tr class="col">
+            <td align="center"><strong class="fs16 cred">
+            	
+					￥ 48
+            	
+            	</strong></td>
+            <td align="center"><strong class="fs16 corange">
+					----
+            	
+			</strong></td>
+            <td align="center"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+   
+   
+   
+   <div class="time-box">
+	     <div class="left" id="refreshGroupBuy">
+	        <p><span class="fb f20 cred" id="subCount">4</span>人已购买</p>
+	        <p>库存:
+	           <span class="cred">无限制</span>
+	        <p class="cgreen">最低成人团数:
+	            <span class="cred">1</span>人
+	        </p>
+	     </div>
+	     <div class="right">
+	        <p>距离结束时间还有：</p>
+	       <p class="f14" id="countdown"></p>
+	       
+	     </div>
+   </div>
+   <div class="shareto">
+     <span><a href="javascript:favoriteGroupBuy(2108,'../../../login.c365.com/mu-sso/servlet/Html5Login@callback=http_253A_252F_252Fm.c365.com_252Fmu-mobi_252Fgroupbuypublish_252FqueryGroupBuyByID.action%3FgroupbuyID%3D2108');" id="favorite">收藏</a></span>
+     <!--
+     <span><a href="#">豆瓣</a></span>
+     <span><a href="#">开心</a></span>
+     <span><a href="#">人人</a></span>
+     -->
+    </div>
+</div>
+
+	<article class="sale-text">
+	    
+	    <h2>详细信息：</h2>
+        <section>
+	    	<h3>活动信息</h3>
+	    	<p style="text-align:center;"><strong><span style="font-size:20px;">【太原市——环球约客】</span></strong><br /></p><p style="text-align:center;"><strong><span style="font-size:20px;"><br /></span></strong></p><p style="text-align:center;"><strong><span style="font-size:20px;"><br /></span></strong></p><p style="text-align:justify;"><strong><span style="font-size:20px;"><img src="http://183.203.16.186:443//groupbuy/20140305/27061394001155933.jpg" title="使用提示.jpg" /><br /></span></strong></p><p style="text-align:justify;"><strong><span style="font-size:20px;"></span></strong></p><p style="line-height:1.5em;"><strong><span style="font-size:14px;color:#000000;">团购日期：</span></strong><span style="font-size:14px;color:#000000;">2014年3月5日—2014年3月11日</span></p><p style="line-height:1.5em;"><strong><span style="font-size:14px;color:#000000;">商家电话：</span></strong><span style="font-size:14px;color:#000000;">0351-4826677 0351-4826688</span></p><p style="line-height:1.5em;"><strong><span style="font-size:14px;color:#000000;">营业时间：</span></strong><span style="font-size:14px;color:#000000;">11：30-14：30 &nbsp; 18：00-22：00</span></p><p style="line-height:1.5em;"><strong><span style="font-size:14px;color:#000000;">商家地址：</span></strong><span style="font-size:14px;color:#000000;">太原市迎泽区铜锣湾三层</span></p><p style="line-height:1.5em;"><strong><span style="font-size:14px;color:#000000;">乘车路线：</span></strong><span style="font-size:14px;color:#000000;">乘10、25路车在柳巷下车</span></p><p style="line-height:1.5em;"><span style="font-size:14px;"></span></p><p><strong><span style="color:#ff0000;font-size:14px;">消费日期：2014年3月12日</span></strong></p><p><strong><span style="color:#ff0000;font-size:14px;"><br /></span></strong></p><p><strong><span style="color:#ff0000;font-size:14px;"><img src="http://183.203.16.186:443//groupbuy/20140305/13131394001243912.jpg" title="特别提示.jpg" /><br /></span></strong></p><p><strong><span style="color:#ff0000;font-size:14px;"></span></strong></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;color:#ff0000;">1、此团购券属到店支付，线上无需支付任何费用，请拨打12580，下载二维码（消费时需验证）</span></strong></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;color:#ff0000;">2、VIP会员享最低价，并且可以参与低至0元的秒杀活动</span></strong></p><p style="line-height:1.75em;"><span style="font-size:14px;"><img src="http://183.203.16.186:443//groupbuy/20140305/81641394001451953.jpg" title="团购小.jpg" /><br /></span></p><p style="line-height:1.75em;"><span style="font-size:14px;"><br /></span></p><p style="line-height:1.75em;"><span style="font-size:14px;"><img src="http://183.203.16.186:443//groupbuy/20140305/96591394001273395.jpg" title="活动详情.jpg" /><br /></span></p><p style="line-height:1.75em;"><strong><span style="font-size:14px;"><span style="font-size:16px;color:#ff0000;">【迎泽区】VIP会员48元享原价78元的环球约客自助餐！</span></span></strong></p><p style="line-height:1.75em;"><strong style="line-height:1.75em;font-size:16px;"><span style="font-size:14px;"><span style="font-size:16px;color:#ff0000;"></span></span></strong></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/45461386574332289.jpg" title="44.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/52521386574332374.jpg" title="55.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/87551386574332445.jpg" title="77.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/29641386574332528.jpg" title="88.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/74071386574332604.jpg" title="99.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/60881386574332699.jpg" title="111.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/15741386574332776.jpg" title="222.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/48161386574332875.jpg" title="333.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/18741386574332946.jpg" title="1010.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/47341386574333032.jpg" title="1111.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/88251386574333109.jpg" title="1212.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/73101386574333197.jpg" title="1313.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/84021386574333275.jpg" title="1414.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/36311386574333351.jpg" title="1515.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/18281386574333437.jpg" title="1616.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/30891386574333515.jpg" title="1717.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/89681386574333593.jpg" title="1818.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/73111386574333687.jpg" title="1919.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/94211386574333764.jpg" title="2020.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/83391386574333843.jpg" title="2121.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/96701386574333939.jpg" title="2222.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/84121386574334015.jpg" title="2323.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/89311386574334093.jpg" title="2424.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/32281386574334212.jpg" title="2525.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/58691386574334265.jpg" title="2626.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/77301386574334342.jpg" title="2727.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/98271386574334437.jpg" title="2828.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/7721386574334468.jpg" title="2929.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/81541386574334546.jpg" title="3030.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/80141386574334593.jpg" title="3131.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/28291386574334688.jpg" title="3232.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//seckill/20131209/7021386574334765.jpg" title="3333.jpg" style="float:none;" /></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><span style="margin:0px;padding:0px;vertical-align:middle;"><span style="margin:0px;padding:0px;vertical-align:middle;color:#ff0000;font-size:14px;font-family:宋体, simsun;"><br /></span></span></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><span style="margin:0px;padding:0px;vertical-align:middle;"><span style="margin:0px;padding:0px;vertical-align:middle;color:#ff0000;font-size:14px;font-family:宋体, simsun;"><img src="http://183.203.16.186:443//seckill/20131111/66801384138070847.jpg" /></span></span></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><span style="margin:0px;padding:0px;vertical-align:middle;"><span style="margin:0px;padding:0px;vertical-align:middle;color:#ff0000;font-size:14px;font-family:宋体, simsun;"><br /></span></span></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><span style="margin:0px;padding:0px;vertical-align:middle;"><span style="margin:0px;padding:0px;vertical-align:middle;color:#ff0000;font-size:14px;font-family:宋体, simsun;"><img src="http://183.203.16.186:443//seckill/20131111/93541384138071097.jpg" /></span></span></p><p style="line-height:1.75em;"><strong style="font-size:16px;margin:0px;padding:0px;vertical-align:middle;"><span style="margin:0px;padding:0px;vertical-align:middle;color:#ff0000;font-size:14px;font-family:宋体, simsun;"><br /></span></strong></p><p style="line-height:1.75em;"><strong style="font-size:16px;margin:0px;padding:0px;vertical-align:middle;"><span style="margin:0px;padding:0px;vertical-align:middle;color:#ff0000;font-size:14px;font-family:宋体, simsun;"><img src="http://183.203.16.186:443//groupbuy/20140305/94661394001343114.jpg" title="商家介绍.jpg" /></span></strong><br /></p><p style="line-height:1.5em;"><span style="margin:0px;padding:0px;vertical-align:middle;font-size:14px;font-family:宋体, simsun;"> &nbsp; &nbsp;环球约客，占地改为将近2000平米，是一家大型中西自助餐厅，环球约客聘请台湾西点师，广东主厨，立志打造西餐走进千家万户，带给三晋不一样的味道，公司宗旨做＂舌尖上的舞者&quot;&quot;。环球约客源于欧洲的经典西餐连锁品牌约客品牌总部旗下设有“左叉右刀咖啡西餐厅”和“约客牛排西餐厅”“台北牛排自助西餐厅”三个主题的西餐厅。 </span></p><p style="line-height:1.5em;"><span style="margin:0px;padding:0px;vertical-align:middle;font-size:14px;font-family:宋体, simsun;"></span></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><span style="margin:0px;padding:0px;vertical-align:middle;"><span style="margin:0px;padding:0px;vertical-align:middle;color:#ff0000;font-size:14px;font-family:宋体, simsun;"><br /></span></span><img src="http://183.203.16.186:443//seckill/20131111/36301384138120754.jpg" /><br /></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><br /></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><img src="http://183.203.16.186:443//seckill/20131111/81391384138121087.jpg" /><br /></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><br /></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><img src="http://183.203.16.186:443//seckill/20131111/40561384138120888.jpg" /><br /></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><br /></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><strong><img src="http://183.203.16.186:443//seckill/20131111/60471384138120969.jpg" /></strong><br /></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><strong><br /></strong></p><p style="padding:0px;color:#6c6a6a;font-size:12px;line-height:22px;font-family:微软雅黑;vertical-align:middle;background-color:#ffffff;margin-top:0px;margin-bottom:0px;"><strong><img src="http://183.203.16.186:443//seckill/20131111/42731384138121137.jpg" /></strong></p><p><br /></p><p><img src="http://183.203.16.186:443//groupbuy/20140305/3141394001376197.jpg" title="小编支招.jpg" /><br /></p><p style="line-height:1.5em;"><span style="font-size:14px;">吃火锅少食内脏</span></p><p style="line-height:1.5em;"><span style="font-size:14px;">随着农药、化肥、添加剂等在食品生产过程中的应用，动物的内脏往往成为这类有害物质的“过滤器”和“贮存器”，尤其是肝脏、肺脏，所含的病原微生物和药物残留量最高。</span></p><p style="line-height:1.5em;"><span style="font-size:14px;"><br /></span></p><p style="line-height:1.5em;"><span style="font-size:14px;"><img src="http://183.203.16.186:443//groupbuy/20140305/72951394001395342.jpg" title="法宝P.jpg" /><br /></span></p><p style="line-height:1.5em;"><span style="font-size:14px;">关注12580电子优惠券官方微信，优惠惊喜尽在掌控！<br /></span></p><p style="line-height:1.5em;"><img src="http://183.203.16.186:443//groupbuy/20140305/83751394001529778.jpg" title="手机.jpg" /></p><p><br /></p>
+	    </section>
+	    <!--
+	    <section>
+	    	<h3>商品信息</h3>
+	    	<div id="gb_productInfo"></div>
+	    </section>
+	    <section>
+	    	<h3>购买须知</h3>
+	    	<p><span style="font-size:14px;">（1）无需提前预约</span></p><p><span style="font-size:14px;">（2）节假日可用</span></p><p><span style="font-size:14px;">（3）每个ID限购1份</span></p><p><span style="font-size:14px;">（4）请在有效期内使用，过期无效</span></p>
+	    </section>
+	    -->
+	<section>
+	    	<h3>商家详情</h3>
+	    	名称：太原环球约客<br/>
+	    	地址：太原市迎泽区铜锣湾潮流汇3层中区<br/>
+	    	电话：0351-4826677<br/>
+	    	公交：乘坐10、25路到柳北下车<br/>
+	    	
+	    </section>
+
+	</article>
+	<article class="comment" id="comment">
+		<h2>商品评价</h2>
+		<div id="toComment">
+	    </div>
+	</article>
+	<script>
+		   $(document).delegate('#gb_describe','pageshow',
+		       function(){
+		          // alert('查询：'+2108);
+		          // queryNewComment(2108);
+		           timerUtil(339302336,$.mobile.activePage.find('#countdown')[0]);
+		         
+		       }
+		   );
+		   
+		   
+		   queryNewComment(2108);
+		   //timerUtil(339302336,'#countdown');
+	</script>
+
+
+<footer>
+    <div class="footer_nav"><a href="../wap/index.action" data-ajax="false">简版</a> 丨 <a href="../downClient.action" data-ajax="false">客户端</a></div>
+    <div class="footer_bottom">
+      <p>晋优惠[晋ICP备11002219]</p>
+        <p>中国移动通信集团山西有限公司</p>
+    </div>
+  </footer>
+<img style="display:none;" src="../../../hm.baidu.com/hm.gif@si=b0c1b8c5ce6123a5ae92c8ffa9b7582f&et=0&nv=0&st=4&lt=1394293484&v=wap-2-0.3&rnd=1416691766" width="0" height="0"  />
+</div>
+</body>
+</html>

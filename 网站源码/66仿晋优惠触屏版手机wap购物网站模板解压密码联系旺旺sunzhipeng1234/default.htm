@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=173300C3F98828DDF69C11E2C998292F";
+</script><title>仿晋优惠触屏版手机wap购物网站模板-pppf.taobao.com整理搜集仅用于学习</title>
+<link href="css/css.css" rel="stylesheet" type="text/css">
+<link href="css/jq.css" rel="stylesheet" type="text/css">
+<link href="css/manage.css" rel="stylesheet" type="text/css">
+<link href="css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="css/refresh.css" />
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="js/iscroll.js"></script>
+<script type="text/javascript" src="js/groupbuydetail.js"></script>
+<script type="text/javascript" src="js/seckill.js"></script>
+<script type="text/javascript" src="js/coupon.js"></script>
+<script type="text/javascript" src="js/book.js"></script>
+<script type="text/javascript" src="js/shop.js"></script>
+<script type="text/javascript" src="js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/js/timer.js?date=new Date()"></script>
+
+</head>
+<body>
+<div data-role="page" id="home">
+<script type="text/javascript">
+var myScroll;
+var scrollTimer;
+function loaded(){
+	myScroll=new iScroll('wrapper',{snap:true,momentum:false,hScrollbar:false,
+		onScrollEnd:function(){
+			document.querySelector('#indicator > li.active').className='';
+			document.querySelector('#indicator > li:nth-child('+(this.currPageX+1)+')').className='active';
+			clearInterval(scrollTimer);
+			autoHomeScroll();
+		}
+	});
+	autoHomeScroll();
+}
+//document.addEventListener('DOMContentLoaded',loaded,false);
+$("#home").bind('pageshow',loaded);
+
+
+
+function scrollToNext(){
+         
+         myScroll.currPageX = parseInt($(document.querySelector('#indicator > li.active')).attr('indexAttr'));
+             if(myScroll.currPageX >= 4){
+                myScroll.currPageX = 0;
+             }
+             myScroll.scrollToElement('#thelist > li:nth-child('+ (myScroll.currPageX+1)+')',100);
+        }
+
+
+  function autoHomeScroll(){//自动滚动代码
+        
+         scrollTimer = setInterval(scrollToNext,4000);
+        
+    }
+</script>
+
+<script type="text/javascript">
+	var now_date = new Date().getTime();
+
+	var login_url = "HTMLLoginServlet.html";
+	var search_kind=function(){
+		if($.mobile.activePage.find("#search_k_d").is(":visible")){
+			$.mobile.activePage.find("#search_k_d").hide();
+		}else{
+			 $.mobile.activePage.find("#search_k_d").show();
+		}
+	}
+		var search_kind_d=function(searchkind){
+		if(searchkind==0){
+		 $.mobile.activePage.find("#search_k").html("全部");
+		}
+		 if(searchkind==1){
+		 $.mobile.activePage.find("#search_k").html("团购");
+		}
+		if(searchkind==2){
+		 $.mobile.activePage.find("#search_k").html("秒杀");
+		}
+		if(searchkind==3){
+		 $.mobile.activePage.find("#search_k").html("优惠");
+		}
+		  $.mobile.activePage.find("#search_k_d").hide();
+		  $.mobile.activePage.find("#searchKind").val(searchkind);
+		}
+</script>
+  <div style="width:320px; margin:0 auto;">
+    
+    <!-- 页头 -->
+<header>
+      <div id="logoutDiv" class="login_bg"><a  href="#" data-ajax="false" class="cwhite">登入</a>&nbsp;|&nbsp;<a .html" data-ajax="false" class="cwhite" href="member/registerPage.html">注册</a></div>
+      <div class="logo">
+        <table width="100%" border="0">
+          <tr>
+            <td width="228px">
+            <a href="../wap.uwxsx.com/wxcs/WlanSsoLogin"><img width="228px" height="55px;" src="images/logo.png" align="absmiddle"></a>
+            </td>
+             <td valign="middle" align="center">
+           		  <a data-transition="slide" href="changeCityPage.html" data-ajax="false"><div class="city_btn">太原</div></a>
+         	 </td>
+          </tr>
+        </table>
+      </div>
+    </header>    <div id="wrapper">
+       <div id="scroller">
+        <ul id="thelist">
+        	<li><a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43305"><img src="http://183.203.16.186:443/advertisementtouch/201403/9d3a5c7b-3ce6-4db8-b6c9-2a49a78b848a.jpg" width="320"></a></li>
+        
+        	<li><a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43249"><img src="http://183.203.16.186:443/advertisementtouch/201403/0c4d5e54-c2fe-4321-96a4-0810b0d1b5bc.jpg" width="320"></a></li>
+        
+        	<li><a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43170"><img src="http://183.203.16.186:443/advertisementtouch/201403/8122dda5-f906-4ad6-a264-4676d0bc21f8.jpg" width="320"></a></li>
+        
+        	<li><a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43306"><img src="http://183.203.16.186:443/advertisementtouch/201403/bc83bc8f-98ac-4524-92cf-347fb19b5b57.jpg" width="320"></a></li>
+        </ul>
+      </div>
+      <div id="nav">
+        <ul id="indicator">
+          <li id="index_pic_pos_1" class="active" indexAttr="1">1</li>
+          <li id="index_pic_pos_2"  indexAttr="2">2</li>
+          <li id="index_pic_pos_3"  indexAttr="3">3</li>
+          <li id="index_pic_pos_4"  indexAttr="4">4</li>
+        </ul>
+      </div>
+    </div>
+    <div class="search">
+      <form id="indexsearchform" action="http://m.c365.com/search.action;jsessionid=173300C3F98828DDF69C11E2C998292F" method="post" data-transition="slide">
+        <input class="search-ipt" id="keywords" name="keywords" value="" type="text" maxlength="64" />
+        <input class="search-btn" name="" type="button" onclick="indexSearch(false)"/>
+        <input type="hidden" id="searchKind" name="searchKind" value="0" />
+        </form>
+        <div class="search_sort">
+          <ul>
+			           <li onclick="search_kind();"><span id="search_k">全部</span> <img width="10px" height="8px;" src="images/city-icon.png"></li>
+			           <div id="search_k_d" style="display:none;">
+			           <li id="search_0" onclick="search_kind_d(0);">全部</li>
+			           <li id="search_1" onclick="search_kind_d(1);">团购</li>
+			           <li id="search_2" onclick="search_kind_d(2);">秒杀</li>
+			           <li id="search_3" onclick="search_kind_d(3);">优惠</li>
+			           </div>
+			         </ul>
+      </div>
+      </div>
+    <div class="apply">
+      <ul>
+        <li>
+          <p><a  href="mu-mobi/groupbuypublish/queryGroupBuy.html" data-ajax="false">
+          <img src="images/newmenu1.png"></a></p>
+          <p><a href="mu-mobi/groupbuypublish/queryGroupBuy.html"   data-ajax="false" >团购</a></p>
+        </li>
+        <li class="line"></li>
+        <li>
+          <p><a  href="mu-mobi/seckillnpublish/querySeckill.html" data-ajax="false">
+          <img src="images/newmenu2.png"></a></p>
+          <p><a href="mu-mobi/seckillnpublish/querySeckill.html" data-ajax="false" >秒杀</a></p>
+        </li>
+        <li class="line"></li>
+        <li>
+          <p><a  href="mu-mobi/couponpublish/queryCoupon.html" data-ajax="false">
+          <img src="images/newmenu3.png"></a></p>
+          <p><a  href="mu-mobi/couponpublish/queryCoupon.html"  data-ajax="false" >优惠券</a></p>
+        </li>
+        <li class="line"></li>
+        <li>
+         <p><a  href="mu-mobi/activitypublish/getSpecialList.html" data-ajax="false" >
+          <img src="images/newmenu5.png"></a></p>
+          <p><a  href="mu-mobi/activitypublish/getSpecialList.html"  data-ajax="false" >专题活动</a></p>
+        </li>
+      </ul>
+    </div>
+    <div class="column-title"> <span>HOT-</span>热门优惠 </div>
+    <div class="column-content">
+      <ul>
+        <li>
+          <p><a href="mu-mobi/couponpublish/queryCouponByID.action@couponID=590"><img style="width:140px;height:159px;" src="http://183.203.16.186:443/advertisementtouch/201402/621822dd-e10c-4a14-b90a-a7f6154a5ba5.jpg"></a></p>
+          <p><a href="mu-mobi/couponpublish/queryCouponByID.action@couponID=590" title="巴贝拉意式休闲餐厅优惠">巴贝拉意式休闲餐厅优惠</a></p>
+        </li>
+        <li>
+          <p><a href="mu-mobi/couponpublish/queryCouponByID.action@couponID=1793"><img style="width:140px;height:159px;" src="http://183.203.16.186:443/advertisementtouch/201402/ae395881-8a27-4d16-a28c-3349dccacf33.jpg"></a></p>
+          <p><a href="mu-mobi/couponpublish/queryCouponByID.action@couponID=1793" title="太原迪士尼国际摄影机构8折优惠">太原迪士尼国际摄影机构8折优惠</a></p>
+        </li>
+        <li>
+         <p><a href="mu-mobi/couponpublish/queryCouponByID.action@couponID=589"><img style="width:140px;height:159px;" src="http://183.203.16.186:443/advertisementtouch/201402/f797bcbb-53f4-4930-9d91-8c6456c0f716.jpg"></a></p>
+          <p><a href="mu-mobi/couponpublish/queryCouponByID.action@couponID=589" title="麦加禾石锅拌饭米饭面食套餐8.5折优惠">麦加禾石锅拌饭米饭面食套餐8.5折优惠</a></p>
+        </li>
+        <li>
+          <p><a href="mu-mobi/couponpublish/queryCouponByID.action@couponID=539"><img style="width:140px;height:159px;" src="http://183.203.16.186:443/advertisementtouch/201402/37885a02-c285-46c3-a73c-aff63b925ad5.jpg"></a></p>
+          <p><a href="mu-mobi/couponpublish/queryCouponByID.action@couponID=539" title="伊莎美尔8.8折优惠">伊莎美尔8.8折优惠</a></p>
+        </li>
+      </ul>
+    </div>
+    <div class="column-title"> <span>TIME-</span>限时秒杀</div>
+    <div class="column-sckill">
+      <ul>
+        <li>
+          <div class="column-sckill_pic">
+          <a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43201"><img style="width:109px;height:72px;" src="http://183.203.16.186:443/advertisementtouch/201403/a73b5e74-bb57-42c0-8534-d35c700e64d0.jpg"></a></div>
+          <div class="column-sckill_txt">
+            <p><a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43201" title="26元秒杀宁宇养生会所4选1泥灸套餐100份！">26元秒杀宁宇养生会所4选1泥灸套餐10...</a></p>
+            <p class="column-sckill_p">
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="column-sckill_pic">
+          <a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43191"><img style="width:109px;height:72px;" src="http://183.203.16.186:443/advertisementtouch/201403/d8c418ff-9ac5-45e0-8f36-510f1a62ef89.jpg"></a></div>
+          <div class="column-sckill_txt">
+            <p><a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43191" title="0元秒杀聚美儿童摄影套系300份！">0元秒杀聚美儿童摄影套系300份！</a></p>
+            <p class="column-sckill_p">
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="column-sckill_pic">
+          <a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43150"><img style="width:109px;height:72px;" src="http://183.203.16.186:443/advertisementtouch/201402/0a59448f-4600-4c09-a9d8-f6aba55600dc.jpg"></a></div>
+          <div class="column-sckill_txt">
+            <p><a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43150" title="0元秒杀 “新丝路中国国际少儿模特大赛”报名卡一张!">0元秒杀 “新丝路中国国际少儿模特大赛”...</a></p>
+            <p class="column-sckill_p">
+						距离结束：<span id="timeseck3" class="cred"></span>
+			       		<script type="text/javascript">
+			       			timerUtil(783080188826,"#timeseck3");
+			       		</script>
+            </p>
+          </div>
+        </li>
+        <li>
+          <div class="column-sckill_pic">
+          <a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43231"><img style="width:109px;height:72px;" src="http://183.203.16.186:443/advertisementtouch/201403/154c320d-06a4-49f5-a2c5-cd4b1706618b.jpg"></a></div>
+          <div class="column-sckill_txt">
+            <p><a href="mu-mobi/seckillnpublish/querySeckillByID.action@seckillTimeID=43231" title="98元秒杀张裕橡木桶干红一瓶(买一赠一)150份 !">98元秒杀张裕橡木桶干红一瓶(买一赠一)...</a></p>
+            <p class="column-sckill_p">
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+     <div class="column-title"> <span>NEW-</span>最新团购</div>
+    <div class="column-new">
+       <ul>
+        <li>
+          <p><a href="mu-mobi/groupbuypublish/queryGroupBuyByID.action@groupbuyID=1985"><img style="width:145px;height:88px;" src="http://183.203.16.186:443/advertisementtouch/201402/d13dd850-c309-422b-bb94-693aca5e7157.jpg"></a></p>
+          <p><a href="mu-mobi/groupbuypublish/queryGroupBuyByID.action@groupbuyID=1985" title="巴贝拉意式休闲餐厅优惠">安然纳米汗蒸养生馆——三次汗蒸套餐！原价...</a></p>
+        </li>
+        <li>
+          <p><a href="mu-mobi/groupbuypublish/queryGroupBuyByID.action@groupbuyID=1988"><img style="width:145px;height:88px;" src="http://183.203.16.186:443/advertisementtouch/201402/96b9dd22-9580-4fda-bd8c-d7a7a41d1eea.jpg"></a></p>
+          <p><a href="mu-mobi/groupbuypublish/queryGroupBuyByID.action@groupbuyID=1988" title="人民公社——铁锅炖菜双人餐套系！原价112元团购75元">人民公社——铁锅炖菜双人餐套系！原价11...</a></p>
+        </li>
+       </ul>
+    </div>
+   <!-- 页尾 -->
+<footer>
+    <div class="footer_nav"><a href="mu-mobi/wap/index.action" data-ajax="false">简版</a> 丨 <a href="mu-mobi/downClient.action" data-ajax="false">客户端</a></div>
+    <div class="footer_bottom">
+      <p>晋优惠[晋ICP备11002219]</p>
+        <p>中国移动通信集团山西有限公司</p>
+    </div>
+  </footer>
+<img style="display:none;" src="../hm.baidu.com/hm.gif@si=b0c1b8c5ce6123a5ae92c8ffa9b7582f&et=0&nv=1&st=1&lt=1392987672&v=wap-2-0.3&rnd=452362602" width="0" height="0"  />
+  </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=DA2779CC49F40D8100768D90A2C35374";
+</script><title>仿晋优惠触屏版手机wap购物网站模板团购列表-pppf.taobao.com整理搜集仅用于学习</title>
+
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<link href="../css/jq.css" rel="stylesheet" type="text/css">
+<link href="../css/manage.css" rel="stylesheet" type="text/css">
+<link href="../css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/refresh.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/groupbuydetail.js"></script>
+<script type="text/javascript" src="../js/seckill.js"></script>
+<script type="text/javascript" src="../js/coupon.js"></script>
+<script type="text/javascript" src="../js/book.js"></script>
+<script type="text/javascript" src="../js/shop.js"></script>
+<script type="text/javascript" src="../js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/mu-mobi/js/timer.js?date=new Date()"></script>
+
+<script type="text/javascript">
+var refreshStatus = function(){
+		var options = {
+			    url:"member/refreshInfo.action;jsessionid=DA2779CC49F40D8100768D90A2C35374",
+				dataType:'json',
+				error:function(a,b){
+					//alert("用户信息刷新失败，请重试！");
+				},
+				success: function(data) {
+					if(!data.phoneno){
+						$.mobile.activePage.find("#loginDiv").html("<a data-transition='slide' class='cwhite' rel='external' href='HTMLLoginServlet'>登录</a>&nbsp;|&nbsp;<a  class='cwhite' data-ajax=\"false\" data-transition=\"slide\" href=\"../member/registerPage.action@skyarmlogin=0&reUrl=aHR0cDovL20uYzM2NS5jb20vbXUtbW9iaS9pbmRleC5hY3Rpb24_2FcHQ9cHBz\">注册</a>");
+					}else{
+						var nick ;
+						if(data.nickname){
+							nick = data.nickname;
+						}else{
+							nick = data.phoneno ;
+						}
+						$.mobile.activePage.find("#loginDiv").html("您好，"+nick+" | <a data-transition='slide'  class='cwhite' href='../member/accountGroupManage.action@currencyKind=12'>个人中心</a> | <a data-transition='slide'  class='cwhite' href='../../mucart/h5/toCartOrderList.action'>购物车</a> | <a id='logouA'  class='cwhite' href='javascript:logout(\"others\",\";jsessionid=DA2779CC49F40D8100768D90A2C35374\");'>退出</a>");
+					}	
+				}
+		};
+		$.ajax(options);
+}
+
+
+$(document).delegate('#home','pageshow',
+      function(){
+          refreshStatus();
+      }
+);
+</script><script type="text/javascript">
+var jssessionid=';jsessionid=DA2779CC49F40D8100768D90A2C35374';
+
+
+</script>
+</head>
+<body>
+<input type="hidden" id="jsessionid" value=";jsessionid=DA2779CC49F40D8100768D90A2C35374"/>
+<div data-role="page" id="page_gbList"> 
+<!-- 页头 -->
+<div class="top">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="80px">
+        <a href="javascript:window.history.back();" class="top-return" data-transition="slide">返回</a>
+        </td>
+        <td class="top_title">团购</td>        
+        <td class="user">
+        <!--
+        	<a href="http://m.c365.com/mu-mobi/member/orderVerify.action;jsessionid=DA2779CC49F40D8100768D90A2C35374"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>
+        	<a href="javascript:showUserHome();"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>  
+        	-->
+        	<a href="javascript:showUserHome();"><img src="../../images/caidan.png"></a>  
+        </td>
+      </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+var showUserHome = function(){
+		member_center_menu();
+};
+
+</script>
+
+<script type="text/javascript">
+var member_center_menu = function(){
+var scrollHeight=document.body.scrollHeight;
+	$.mobile.activePage.find('#leftmenumask').show();
+	$.mobile.activePage.find('#left_menu_in').toggle('slow');
+	$.mobile.activePage.find('#left_menu_in').css("top:10");
+	
+}
+var leftsearch = function(){
+  var leftkeywords=$.mobile.activePage.find("#leftkeywords").val();
+  var leftsearchKind=$.mobile.activePage.find("#leftsearchKind").val();
+  if(!leftkeywords){
+    alert("请输入关键字");
+    $.mobile.activePage.find("#leftkeywords").focus();
+	return false;
+  }
+  window.location.href="../search.action@lsk=1&searchKind="+leftsearchKind+"&keywords="+leftkeywords;
+}
+</script>
+<div class="left_menu" style="z-index:9999;">
+   <div id="left_menu_in" style="display:none;z-index:9999;" class="left_menu_in">
+     <ul>
+      <li>
+          <div class="left_search"><input class="left_search_ipt" id="leftkeywords" name="leftkeywords" type="text" value="" maxlength="64"></div>
+          <div class="left_search_btn"><input class="left_search_btn2" name="" type="button" onclick="leftsearch();"></div>
+          <input type="hidden" id="leftsearchKind" name="searchKind" value="1" />
+       </li>
+        <li><a data-ajax="false" data-transition="slide" rel="external" href="../HTMLLoginServlet" >登录</a></li>
+        <li><a data-transition="slide"  href="../member/registerPage.action">注册</a></li>
+     <li>
+     <a href="../changeCityPage.action" data-role="button">切换城市
+     <span style="float:right;">晋优惠太原站&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+     </li>
+	<li><a data-transition="slide"  href="../index.action">晋优惠首页</a></li>
+     </ul>
+     
+   </div>
+   
+   <div class="popup" style="display:none;">
+     <a href="javascript:member_center_menu();"><img src="../images/tang_a.png"></a>
+   </div>
+ </div>
+<div id="leftmenumask" style="height:2980px;display:none;top:100;" data-role="none" onclick="leftclick();"></div>
+
+
+
+<script type="text/javascript">
+var areaType= 1;
+var industry = 2;
+var select = 3;
+var showType = 4;
+
+var showSearch = function(id){
+	//弹出
+	$.mobile.activePage.find('#leftmask').show();
+	$.mobile.activePage.find('#seardiv').toggle('slow');
+	$.mobile.activePage.find('#seardiv').css("top:10");
+	
+	if(id==areaType){
+		SelectArea();
+	}else if(id==industry){
+		SelectIndustry();
+	}else if(id==select){
+		SelectSort();
+	}else if(id == showType){
+		SelectShowType();
+	}
+	$.mobile.activePage.find('#toolardiv').hide("slow");
+	
+};
+
+
+var hideall = function(){
+	$.mobile.activePage.find('#areadiv').hide();
+	$.mobile.activePage.find('#industrydiv').hide();
+	$.mobile.activePage.find('#modiv').hide();
+	$.mobile.activePage.find('#showTypediv').hide();
+	
+	$("#areabt").removeClass("select");
+	$("#industrybt").removeClass("select");
+	$("#selectbt").removeClass("select");
+	$("#showTypebt").removeClass("select");
+};
+
+var SelectArea = function(){
+	hideall();
+	$.mobile.activePage.find('#areadiv').show("fast");
+	$("#areabt").addClass("select");
+};
+
+var SelectIndustry = function(){
+	hideall();
+	$.mobile.activePage.find('#industrydiv').show("fast");
+	$("#industrybt").addClass("select");
+};
+
+var SelectSort = function(){
+	hideall();
+	$.mobile.activePage.find('#modiv').show("fast");
+	$("#selectbt").addClass("select");	
+};
+
+var SelectShowType = function(){
+	hideall();
+	$.mobile.activePage.find('#showTypediv').show("fast");
+	$("#showTypebt").addClass("select");
+};
+
+
+
+
+
+var queryByarea = function(provinid,cityid,areaid){
+	querySequece(provinid,cityid,areaid,0,0,0,1,0);
+};
+var queryByIndustry = function(firstindid,secindid){
+	querySequece(0,10000,0,firstindid,secindid,0,1,0);
+};
+var queryBySelect = function(name,type){
+	querySequece(0,10000,0,0,0,name,type,0);
+};
+var queryByStatue = function(status){
+	querySequece(0,10000,0,0,0,0,1,status);
+};
+
+
+var querySequece = function(province,city,area,firstindustry,secIndustry,sortname,sorttype,activeStatue){
+	var url ="http://m.c365.com/mu-mobi/groupbuypublish/queryGroupBuy.action;jsessionid=DA2779CC49F40D8100768D90A2C35374?";
+	url+="&seqence.cityId="+city;
+	url+="&seqence.areaId="+area;
+	url+="&seqence.secIndustryId="+firstindustry;
+	url+="&seqence.thrdIndustryId="+secIndustry;
+	url+="&seqence.sortName="+sortname;
+	url+="&seqence.orderType="+sorttype;
+	url+="&seqence.activeStatue="+activeStatue;
+	
+	
+	$("#seardiv").hide();
+	$("#leftmask").hide();
+	window.location.href=url;
+};
+
+
+var showFirstInd = function(obj){
+$("#inddiv .r_main").hide();
+$(obj).toggleClass("show");
+$(obj).toggleClass("hide");
+$(obj).next().toggle("slow");
+};
+$(document).ready(function(){
+	$("#leftmask").bind("click",function(){
+		$("#seardiv").hide("slow");
+		$("#leftmask").hide("slow");
+	});
+});
+
+</script>
+	 	<div class="selt"  data-role="none">
+	  <ul style="width:100%;">
+	  	<li><a href="javascript:showSearch(2);"  style="display:block;border-left:1px #ccc solid;">全部分类</a></li>
+	    <li><a href="javascript:showSearch(1);"  style="display:block;border-left:1px #ccc solid;">地区</a></li>
+	   		 <li style="display:none" ><a href="javascript:showSearch(4);"  style="display:block;border-left:1px #ccc solid;">筛选</a></li>
+	    <li><a href="javascript:showSearch(3);"  style="display:block;border-left:1px #ccc solid;">排序</a></li>
+	  </ul>
+	  </div>
+<div id="leftmask" style="height:2980px;display:none;top:100;" data-role="none"></div>
+    
+  
+ <div class="search_new" id="seardiv"  style="display:none;top:10;" data-role="none">	
+	 	<div class="search_lable c-fix">
+	    <ul style="width:100%;">
+	      <li><a id="industrybt" href="javascript:SelectIndustry();">分类</a></li>
+	      <li><a id="areabt" class="select" href="javascript:SelectArea();">地区</a></li>
+	    	<li style="display:none" ><a id="showTypebt" href="javascript:SelectShowType();">筛选</a></li>
+	     <li><a id="selectbt" href="javascript:SelectSort();">排序</a></li>
+	    </ul>
+	  </div>
+
+    <ul class="area c-fix" id="industrydiv" style="display:none;">
+    	 <li>
+	        <h2 class="l_main">分类</h2>
+	        <ul class="r_main">
+					<li><a href="javascript:queryByIndustry(0,0);" class="area-selected"  >所有类型</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10680,0);">酒店旅游</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10697,0);">商品购物</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10260,0);">休闲娱乐</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10296,0);">餐饮美食</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10331,0);">生活服务</a></li>
+	        </ul>
+	      </li>
+	      <li>
+	        <h2 class="l_main">请选择</h2>
+	        <ul class="r_main">
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10681);">星级酒店</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10685);">连锁酒店</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10687);">普通宾馆</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10690);">旅游景点</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10692);">市郊景区</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10694);">旅行社</a></li>
+	        </ul>
+	      </li>
+  </ul>
+    
+    
+   <ul class="area c-fix" id="areadiv">
+      <li>
+        <h2 class="l_main">区域</h2>
+        <ul class="r_main">
+				<li><a href="javascript:queryByarea(9999,10000,0);" class="area-selected"  >所有区域</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10001);">小店区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10002);">杏花岭区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10003);">万柏林区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10004);">清徐县</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10005);">娄烦县</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10006);">迎泽区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10007);">尖草坪区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10008);">晋源区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10009);">阳曲县</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10010);">古交</a></li>
+				
+        </ul>
+      </li>
+  </ul>
+    <ul  class="div_mo"  id="modiv" style="width:100%;">    
+   		<li><a href="javascript:queryBySelect(0,0);">默认 </span></a></li>
+   		<li>&nbsp;</li>
+   		<li><a  href="javascript:queryBySelect(1,1);"><span>销量&nbsp;&nbsp;<img src="../../images/arrow-c.png" alt="" /></span></a></li>
+  		<li>&nbsp;</li>
+   		<li><a  href="javascript:queryBySelect(2,1);"><span>评论&nbsp;&nbsp;<img src="../../images/arrow-c.png" alt="" /></span></a></li>
+  	</ul>
+  
+  	<ul  class="div_mo"  id="showTypediv" style="width:100%;">    
+   		<li><a class="area-selected" href="javascript:queryByStatue(0);">默认 </span></a></li>
+   		<li>&nbsp;</li>
+  		<li><a  href="javascript:queryByStatue(2);"><span>进行中&nbsp;&nbsp;</span></a></li>
+  		<li>&nbsp;</li>
+   		<li><a  href="javascript:queryByStatue(1);"><span>即将开始&nbsp;&nbsp;</span></a></li>
+   	</ul>
+  	
+  	
+</div>
+<div id="tuan" class="sckill">
+<input type="hidden" id="loginUrl" value="http://login.c365.com/mu-sso/servlet/Html5Login?callback=http%3A%2F%2Fm.c365.com%2Fmu-mobi%2Fgroupbuypublish%2FqueryGroupBuy.action%3Fcityid%3D10000"/>
+<div id="wrapper_gb"  class="wrapper" style="top:80px">
+	<div id="scroller_gb">
+		<div id="pullDown" style="display:none">
+			<span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
+		</div>
+
+		  <ul id="groupbuyList" data-page="1" data-pagaTotal="3">
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.html" data-ajax="false">【迎泽区】环球约客——自助餐！</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.html" data-ajax="false">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20140305/74181394013204403.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>48</strong>元<span class="g_price">78元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown2108"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(339315903,'#countdown2108',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton2108" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">4</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.action@groupbuyID=2106" data-transition="slide">【小店区】德得轩——单人烤肉自助餐！</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.action@groupbuyID=2106" data-transition="slide">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20140305/2551394006787457.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>66</strong>元<span class="g_price">79元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown2106"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(596715903,'#countdown2106',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton2106" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">2</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.action@groupbuyID=2103" data-transition="slide">【迎泽区】紫韵家纺——精品畅享生活四件套套系！原价635元团购150元</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.action@groupbuyID=2103" data-transition="slide">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20140305/67371393990548905.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>150</strong>元<span class="g_price">635元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown2103"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(1037714902,'#countdown2103',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton2103" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">3</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.action@groupbuyID=2104" data-transition="slide">【迎泽区】紫韵家纺——精品心灵花园四件套套系！原价1165元团购180元</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.action@groupbuyID=2104" data-transition="slide">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20140305/14721394000927885.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>180</strong>元<span class="g_price">1165元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown2104"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(1037714902,'#countdown2104',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton2104" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">6</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.action@groupbuyID=2023" data-transition="slide">【小店区】半月鲜食新鲜保洁五谷鸡蛋——精品五谷鸡蛋套系！原价39元团购31元</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.action@groupbuyID=2023" data-transition="slide">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20140117/70871389927984835.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>32</strong>元<span class="g_price">39元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown2023"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(7344914902,'#countdown2023',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton2023" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">9</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.action@groupbuyID=2003" data-transition="slide">【迎泽区】老北京春卷店——双人餐！</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.action@groupbuyID=2003" data-transition="slide">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20140114/14731389660773168.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>68</strong>元<span class="g_price">76元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown2003"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(9926115902,'#countdown2003',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton2003" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">13</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.action@groupbuyID=2004" data-transition="slide">【迎泽区】老北京春卷店——3人餐！</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.action@groupbuyID=2004" data-transition="slide">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20140114/3961389661766837.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>88</strong>元<span class="g_price">109元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown2004"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(9926115902,'#countdown2004',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton2004" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">2</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.action@groupbuyID=1984" data-transition="slide">【迎泽区】麻辣香锅——双人套餐！原价114.5元团购价48元</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.action@groupbuyID=1984" data-transition="slide">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20131230/25781388368381543.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>55</strong>元<span class="g_price">114.5元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown1984"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(7247715902,'#countdown1984',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton1984" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">25</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.action@groupbuyID=1642" data-transition="slide">【小店区】聚美儿童主题摄影经典儿童写真套系！节假日通用！原价588元，现团购价218元，VIP会员低至198元！抓住童年美好瞬间， 让记忆成为永恒，抓住宝宝最童真的一面，让画面成为永久的记忆！</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.action@groupbuyID=1642" data-transition="slide">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20131012/32731381569843592.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>218</strong>元<span class="g_price">588元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown1642"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(14830098902,'#countdown1642',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton1642" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">196</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+				        <li>
+				        <h1><a href="queryGroupBuyByID.action@groupbuyID=2046" data-transition="slide">【小店区】迪世尼国际摄影机构——精灵贵族儿童写真套系，专业的摄影技巧，变幻莫测的手法，引领着别样的时尚！</a></h1>
+				        <table width="100%" border="0">
+				          <tr>
+				           <td width="110px"><a href="queryGroupBuyByID.action@groupbuyID=2046" data-transition="slide">
+		                   <img width="100px" height="66px" src="http://183.203.16.186:443/groupbuy/20140124/75111390545639014.jpg">
+				           </a></td>
+				           <td valign="top">
+				             <p>价格：<strong>308</strong>元<span class="g_price">1088元</span></p>
+				          
+						        <p>距离结束：<span class="cred" id="countdown2046"></span></p>
+						        <script type="text/javascript">
+					       			timerUtil(14858115902,'#countdown2046',1);
+					       		</script>
+				             
+				             <p>
+						         <input id="gbButton2046" class="sckill_btn" name="" type="button" value="立即抢购"  data-role="none"/>
+						     
+						     
+				             &nbsp;&nbsp;<span class="cred">3</span>人已参团</p>
+				           </td>
+				         </tr>  
+				       </table>
+				       
+				   </li>
+		        
+		  </ul>
+		  
+		  
+						     <input type="hidden" id="token" value=""/>
+						     <input type="hidden" id="common_exchangeHtml5URL" value="http://m.c365.com/mucart/memberh/exchangeList.action"/>
+						     <input type="hidden" id="basePath" value="http://m.c365.com/mu-mobi/"/>
+		  
+  <!-- msg window -->
+		    <div id="tuan_ok">
+		    <h2 class="text-center cgreen" ><span id="result">团购成功！</span></h2>
+		    <p class="text-center" ><span id="msg">请到个人账户中查看优惠券。</span></p>
+		    <p class="text-center"><input id="closeMsg" name="" type="button" value="我知道了" onClick="gb_hideMsg();" data-role="none"></p>
+      </div>
+        <div id="pullUp">
+            <div class="to-update">
+			  <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多。。。</span>
+			</div>
+		</div>
+<footer>
+    <div class="footer_nav"><a href="../wap/index.action" data-ajax="false">简版</a> 丨 <a href="../downClient.action" data-ajax="false">客户端</a></div>
+    <div class="footer_bottom">
+      <p>晋优惠[晋ICP备11002219]</p>
+        <p>中国移动通信集团山西有限公司</p>
+    </div>
+  </footer>
+<img style="display:none;" src="../../../hm.baidu.com/hm.gif@si=b0c1b8c5ce6123a5ae92c8ffa9b7582f&et=0&nv=0&st=4&lt=1394293459&v=wap-2-0.3&rnd=791118196" width="0" height="0"  />
+	</div>
+</div>
+  
+</div>
+
+<script type="text/javascript">
+var myScroll_gb,
+	pullDownEl_gb, pullDownOffset_gb,
+	pullUpEl_gb, pullUpOffset_gb,
+	generatedCount_gb = 0;
+
+function gb_pullDownAction () {
+	//修改些函数使用ajax查询数据 注意调用ajax成功后要调用  myScroll.refresh();	
+	//这里不需要查询数据
+	pullDownEl_gb.querySelector('.pullDownLabel').innerHTML = '没有数据更新...';		
+	gb_resultFunction();
+}
+
+function gb_resultFunction(isEnd){
+    if(myScroll_gb!=null){
+      myScroll_gb.refresh();
+    }
+    if(isEnd){
+      pullUpEl_gb.querySelector('.pullUpLabel').innerHTML = '没有更多。。。';
+    }
+}
+
+function gb_pullUpAction () {
+	//修改些函数使用ajax查询数据 注意调用ajax成功后要调用  scroll.refresh();	
+	queryMoreGroupbuy('../default.htm',gb_resultFunction,10000,0,0,0,0,1);
+}
+
+function gb_destroy(){
+    if(myScroll_gb!=null){
+      myScroll_gb.destroy();
+    }
+}
+
+
+function gb_loaded() {
+	var $wrapper_gb = $('#wrapper_gb');
+    pullDownEl_gb = $wrapper_gb.find('#pullDown').get(0);
+	pullDownOffset_gb = pullDownEl_gb.offsetHeight;
+	pullUpEl_gb = $wrapper_gb.find('#pullUp').get(0);	
+	pullUpOffset_gb = pullUpEl_gb.offsetHeight;
+	
+	
+	myScroll_gb = new iScroll('wrapper_gb', {
+		useTransition: true,
+		topOffset: pullDownOffset_gb,
+		onRefresh: function () {
+			if (pullDownEl_gb.className.match('loading')) {
+				pullDownEl_gb.className = '';
+				pullDownEl_gb.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+				pullUpEl_gb.className = '';
+				pullUpEl_gb.querySelector('.pullUpLabel').innerHTML = '上拉加载更多。。。';
+			} else if (pullUpEl_gb.className.match('loading')) {
+				pullUpEl_gb.className = '';
+				pullUpEl_gb.querySelector('.pullUpLabel').innerHTML = '上拉加载更多。。。';
+			}
+		},
+		onScrollMove: function () {
+			if (this.y > 5 && !pullDownEl_gb.className.match('flip')) {
+				pullDownEl_gb.className = 'flip';
+				pullDownEl_gb.querySelector('.pullDownLabel').innerHTML = 'Release to refresh...';
+				this.minScrollY = 0;
+			} else if (this.y < 5 && pullDownEl_gb.className.match('flip')) {
+				pullDownEl_gb.className = '';
+				pullDownEl_gb.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
+				this.minScrollY = -pullDownOffset_gb;
+			//} else if (this.y < (this.maxScrollY - 5) && !pullUpEl_gb.className.match('flip')) {
+			} else if (this.y < (this.maxScrollY - 5)) {
+				pullUpEl_gb.className = 'flip';
+				pullUpEl_gb.querySelector('.pullUpLabel').innerHTML = '松开刷新。。。';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && pullUpEl_gb.className.match('flip')) {
+				pullUpEl_gb.className = '';
+				pullUpEl_gb.querySelector('.pullUpLabel').innerHTML = '上拉加载更多。。。';
+				this.maxScrollY = pullUpOffset_gb;
+			}
+		},
+		onScrollEnd: function () {
+			if (pullDownEl_gb.className.match('flip')) {
+				pullDownEl_gb.className = 'loading';
+				pullDownEl_gb.querySelector('.pullDownLabel').innerHTML = '正在加载。。。';				
+				gb_pullDownAction();	// Execute custom function (ajax call?)
+			} else if (pullUpEl_gb.className.match('flip')) {
+				pullUpEl_gb.className = 'loading';
+				pullUpEl_gb.querySelector('.pullUpLabel').innerHTML = '正在加载。。。';				
+				gb_pullUpAction();	// Execute custom function (ajax call?)
+			}
+		}
+	});
+	setTimeout(function () { document.getElementById('wrapper_gb').style.left = '0'; }, 800);
+	gb_resultFunction();
+}
+//document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+//document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 200); }, false);
+//jquery mobile转场后事件
+$('#page_gbList').bind('pageshow',gb_loaded);
+$('#page_gbList').bind('pagehide',gb_destroy);
+
+$(document).on("pageinit","#page_gbList",function(){
+  $(".sckill_btn").on("tap",function(){
+    var obj_id =  $(this).attr("id");
+    var gbid = obj_id.replace('gbButton','');
+    groupbuyit(gbid,'../../../login.c365.com/mu-sso/servlet/Html5Login@callback=http_253A_252F_252Fm.c365.com_252Fmu-mobi_252Fgroupbuypublish_252FqueryGroupBuy.action%3Fcityid%3D10000','#'+obj_id);
+  });                       
+});
+</script>
+</div>
+</body>
+</html>

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=173300C3F98828DDF69C11E2C998292F";
+</script><title>仿晋优惠触屏版手机wap购物网站模板注册页-pppf.taobao.com整理搜集仅用于学习</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<link href="../css/jq.css" rel="stylesheet" type="text/css">
+<link href="../css/manage.css" rel="stylesheet" type="text/css">
+<link href="../css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/refresh.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/groupbuydetail.js"></script>
+<script type="text/javascript" src="../js/seckill.js"></script>
+<script type="text/javascript" src="../js/coupon.js"></script>
+<script type="text/javascript" src="../js/book.js"></script>
+<script type="text/javascript" src="../js/shop.js"></script>
+<script type="text/javascript" src="../js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/js/timer.js?date=new Date()"></script>
+
+<script type="text/javascript">
+var refreshStatus = function(){
+		var options = {
+			    url:"member/refreshInfo.action;jsessionid=173300C3F98828DDF69C11E2C998292F",
+				dataType:'json',
+				error:function(a,b){
+					//alert("用户信息刷新失败，请重试！");
+				},
+				success: function(data) {
+					if(!data.phoneno){
+						$.mobile.activePage.find("#loginDiv").html("<a data-transition='slide' class='cwhite' rel='external' href='HTMLLoginServlet'>登录</a>&nbsp;|&nbsp;<a  class='cwhite' data-ajax=\"false\" data-transition=\"slide\" href=\"registerPage.action@skyarmlogin=0&reUrl=aHR0cDovL20uYzM2NS5jb20vbXUtbW9iaS9pbmRleC5hY3Rpb24_2FcHQ9cHBz\">注册</a>");
+					}else{
+						var nick ;
+						if(data.nickname){
+							nick = data.nickname;
+						}else{
+							nick = data.phoneno ;
+						}
+						$.mobile.activePage.find("#loginDiv").html("您好，"+nick+" | <a data-transition='slide'  class='cwhite' href='accountGroupManage.action@currencyKind=12'>个人中心</a> | <a data-transition='slide'  class='cwhite' href='../mucart/h5/toCartOrderList.action'>购物车</a> | <a id='logouA'  class='cwhite' href='javascript:logout(\"others\",\";jsessionid=173300C3F98828DDF69C11E2C998292F\");'>退出</a>");
+					}	
+				}
+		};
+		$.ajax(options);
+}
+
+
+$(document).delegate('#home','pageshow',
+      function(){
+          refreshStatus();
+      }
+);
+</script></head>
+<body>
+<div data-role="page">
+<link type="text/css" rel="stylesheet" href="../js/formvalidator4.0/style/validator.css"></link>
+<script type="text/javascript" src="../js/jquery.form.js"></script>
+<script src="../js/formvalidator4.0/formValidator_min.js" type="text/javascript"></script>
+<script src="../js/formvalidator4.0/formValidatorRegex.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$.formValidator.initConfig({formid:"myform_register",onsuccess:function(){return true;}});
+		//$("#name_register").formValidator({onshow:"&nbsp;",onfocus:"&nbsp;",oncorrect:"&nbsp;"}).inputValidator({min:1,max:16,empty:{leftempty:false,rightempty:false,emptyerror:"&nbsp;"},onerror:"&nbsp;"});
+		//$("#nickname_register").formValidator({onshow:"&nbsp;",onfocus:"&nbsp;",oncorrect:"&nbsp;"}).inputValidator({min:1,max:16,empty:{leftempty:false,rightempty:false,emptyerror:"&nbsp;"},onerror:"&nbsp;"});
+		//$("#email_register").formValidator({onshow:"&nbsp;",onfocus:"&nbsp;",oncorrect:"&nbsp;"}).inputValidator({min:1,max:32,empty:{leftempty:false,rightempty:false,emptyerror:"&nbsp;"},onerror:"&nbsp;"});
+		//$("#birthday").formValidator({empty:true,onshow:"&nbsp;",onfocus:"&nbsp;",oncorrect:"&nbsp;"}).regexValidator({regexp:"date",dataType:"enum",onerror:"&nbsp;"});
+		$("#phoneno_register").formValidator({onshow:"&nbsp;",onfocus:"&nbsp;",oncorrect:"&nbsp;"}).inputValidator({min:11,max:11,empty:{leftempty:false,rightempty:false,emptyerror:"&nbsp;"},onerror:"&nbsp;"});
+		$("#randCode_register").formValidator({onshow:"&nbsp;",onfocus:"&nbsp;",oncorrect:"&nbsp;"}).inputValidator({min:1,max:10,empty:{leftempty:false,rightempty:false,emptyerror:"&nbsp;"},onerror:"&nbsp;"});
+		$("#msgRandCode_register").formValidator({onshow:"&nbsp;",onfocus:"&nbsp;",oncorrect:"&nbsp;"}).inputValidator({min:1,max:10,empty:{leftempty:false,rightempty:false,emptyerror:"&nbsp;"},onerror:"&nbsp;"});
+		$("#password1_register").formValidator({onshow:"&nbsp;",onfocus:"&nbsp;",oncorrect:"&nbsp;"}).inputValidator({min:6,max:32,empty:{leftempty:false,rightempty:false,emptyerror:"&nbsp;"},onerror:"&nbsp;"});
+		$("#password2_register").formValidator({onshow:"&nbsp;",onfocus:"&nbsp;",oncorrect:"&nbsp;"}).inputValidator({min:6,max:32,empty:{leftempty:false,rightempty:false,emptyerror:"&nbsp;"},onerror:"&nbsp;"}).compareValidator({desid:"password1_register",operateor:"=",onerror:"&nbsp;"});
+		
+		});
+	function getRandCode(){
+		var randCode = $("#randCode_register").val();
+		var mobile = $("#phoneno_register").val();
+		if(!(mobile!=""&&mobile.length==11)){
+			$("#phoneno_register").focus();
+			return;
+		}
+		if(randCode==""){
+			$("#randCode_register").focus();
+			return;
+		}
+		
+		
+		$.ajax({
+		   type: "POST",
+		   dataType:"json",
+		   url: "applyRandCode.action",
+		   data: {'randCode':randCode,'member.phoneno':mobile},
+		   success: function(data){
+			   if(data.status==0){
+		   			alert("短信验证码发送成功，请查收短信，如果没收到可以再次获取！");
+		   		}else{
+		   			alert(data.msg);
+		   		}
+		   },
+		   error: function(){
+			 alert("短信验证码发送失败，请重试！");
+		   }
+		});
+	}
+	
+	function randCode(){
+		$("#randCodeImg").attr("src","../randomCode.jpg@date="+new Date());
+	}
+	
+	function isSXPhoneNo(){
+		var mobile = $("#phoneno_register").val();
+		$.ajax({
+		   type: "POST",
+		   dataType:"json",
+		   url: "validatePhoneNo.action",
+		   data: {'phoneNo':mobile},
+		   success: function(data){
+		   		if(data.status==1){
+		   			$('#phoneno_registerTip').removeClass().addClass('onCorrect');
+		   			$('#phoneno_registerTip').html('&nbsp;');
+		   			return true;
+		   		}else{
+		   			$('#phoneno_registerTip').removeClass().addClass('onError');
+		   			$('#phoneno_registerTip').text('请输入山西移动号码');
+		   			return false;
+		   		}	
+		   },
+		   error: function(){
+			  $('#phoneno_registerTip').removeClass().addClass('onError');
+		   	  $('#phoneno_registerTip').text('请输入山西移动号码');
+			  return false;
+		   }
+		});
+	}
+	
+	function register(){
+		if (!jQuery.formValidator.pageIsValid()) {
+			return;
+		}
+		var options = {
+		    url:"register.action",
+			dataType:'json',
+			error:function(a,b){
+				alert("error");
+				$("#submit_register").attr("onclick","javascript:register();");
+			},
+			success: function(data) {
+				if(data.status==0){
+					//window.location.href="../index.action";
+					top.window.location.href="modifyInfo.action@token="+data.token;
+				}else{
+					if(data.status==109){
+						alert("您已是无线城市注册客户，您可以直接登录！");
+						//randCode();
+						top.window.location.href="../HTMLLoginServlet";
+					//	$("#randCodeImg").attr("src","../randomCode.jpg@date="+new Date());
+					}else {
+						alert(data.msg);
+						$("#randCodeImg").attr("src","../randomCode.jpg@date="+new Date());
+						$("#submit_register").attr("onclick","javascript:register();");
+					}
+				}
+			}
+		};
+		$("#submit_register").attr("onclick","");
+		jQuery('#myform_register').ajaxSubmit(options);
+	}
+</script>
+
+  <!-- 页头 -->
+<div class="top">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="80px">
+        <a href="javascript:window.history.back();" class="top-return" data-transition="slide">返回</a>
+        </td>
+        <td class="top_title">用户注册</td>        
+        <td class="user">
+        <!--
+        	<a href="http://m.c365.com/member/orderVerify.action;jsessionid=173300C3F98828DDF69C11E2C998292F"><img src="http://m.c365.com//images/user.png"></a>
+        	<a href="javascript:showUserHome();"><img src="http://m.c365.com//images/user.png"></a>  
+        	-->
+        	<a href="javascript:showUserHome();"><img src="../images/caidan.png"></a>  
+        </td>
+      </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+var showUserHome = function(){
+		member_center_menu();
+};
+
+</script>
+
+<script type="text/javascript">
+var member_center_menu = function(){
+var scrollHeight=document.body.scrollHeight;
+	$.mobile.activePage.find('#leftmenumask').show();
+	$.mobile.activePage.find('#left_menu_in').toggle('slow');
+	$.mobile.activePage.find('#left_menu_in').css("top:10");
+	
+}
+var leftsearch = function(){
+  var leftkeywords=$.mobile.activePage.find("#leftkeywords").val();
+  var leftsearchKind=$.mobile.activePage.find("#leftsearchKind").val();
+  if(!leftkeywords){
+    alert("请输入关键字");
+    $.mobile.activePage.find("#leftkeywords").focus();
+	return false;
+  }
+  window.location.href="../search.action@lsk=1&searchKind="+leftsearchKind+"&keywords="+leftkeywords;
+}
+</script>
+<div class="left_menu" style="z-index:9999;">
+   <div id="left_menu_in" style="display:none;z-index:9999;" class="left_menu_in">
+     <ul>
+      <li>
+          <div class="left_search"><input class="left_search_ipt" id="leftkeywords" name="leftkeywords" type="text" value="" maxlength="64"></div>
+          <div class="left_search_btn"><input class="left_search_btn2" name="" type="button" onclick="leftsearch();"></div>
+          <input type="hidden" id="leftsearchKind" name="searchKind" value="" />
+       </li>
+        <li><a data-ajax="false" data-transition="slide" rel="external" href="../mu-mobi//HTMLLoginServlet" >登录</a></li>
+        <li><a data-transition="slide"  href="registerPage.action">注册</a></li>
+	<li><a data-transition="slide"  href="../index.action">晋优惠首页</a></li>
+     </ul>
+     
+   </div>
+   
+   <div class="popup" style="display:none;">
+     <a href="javascript:member_center_menu();"><img src="../images/tang_a.png"></a>
+   </div>
+ </div>
+<div id="leftmenumask" style="height:2980px;display:none;top:100;" data-role="none" onclick="leftclick();"></div>
+
+  <div class="main">
+  	
+  	<div class="ifm">
+          <form id="myform_register" action="" method="post" enctype="multipart/form-data">
+            <table border="0" width="100%">
+        <tr>
+          <td align="right" class="name_title" style="width:80px;">手机号码：</td>
+          <td><input class="ipt" name="member.phoneno" id="phoneno_register" type="text" maxlength="11" /><span id="phoneno_registerTip"></span></td>
+        </tr>
+        
+        <tr>
+          <td align="right" class="name_title">验证码：</td>
+          <td><input class="ipt" name="randCode" type="text" id="randCode_register" style="width: 40%;" maxlength="4" />
+          	<a href="javascript:randCode();"><img align="absmiddle" id="randCodeImg" src="../randomCode.jpg" alt="" /></a>
+          	<span id="randCode_registerTip"></span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right" class="name_title"></td>
+          <td><a href="javascript:getRandCode();">获取短信验证码</a></td>
+        </tr>
+        <tr>
+          <td align="right" class="name_title">短信验证码：</td>
+          <td><input class="ipt" name="msgRandCode" id="msgRandCode_register" type="text" maxlength="6" /><span id="msgRandCode_registerTip"></span></td>
+        </tr>
+        <tr>
+          <td align="right" class="name_title">密码：</td>
+          <td><input class="ipt" name="password1" id="password1_register" type="password" maxlength="32" /><span id="password1_registerTip"></span></td>
+        </tr>
+        <tr>
+          <td align="right" class="name_title">确认密码：</td>
+          <td><input class="ipt" name="password2" id="password2_register" type="password" maxlength="32" /><span id="password2_registerTip"></span></td>
+        </tr>
+              <tr>
+                <td></td>
+                <td><input data-role="none" id="submit_register" value="注 册" style="width:130px;" class="agree_btn" name="" type="button" onclick="register()"></td>
+              </tr>
+            </table>
+          </form>
+        </div>
+        
+  </div>
+  <!-- 页尾 -->
+<footer>
+    <div class="footer_nav"><a href="../mu-mobi/wap/index.action" data-ajax="false">简版</a> 丨 <a href="../mu-mobi/downClient.action" data-ajax="false">客户端</a></div>
+    <div class="footer_bottom">
+      <p>晋优惠[晋ICP备11002219]</p>
+        <p>中国移动通信集团山西有限公司</p>
+    </div>
+  </footer>
+<img style="display:none;" src="../../hm.baidu.com/hm.gif@si=b0c1b8c5ce6123a5ae92c8ffa9b7582f&et=0&nv=0&st=4&lt=1394293713&v=wap-2-0.3&rnd=1062102733" width="0" height="0"  />
+  	<div style="position:absolute; left:-9999px;"><a href="#" id="setfoc"></a></div>
+</div>
+</body>
+</html>

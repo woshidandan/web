@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=437B07F721EBD615364D2118C387F151";
+</script><title>仿晋优惠触屏版手机wap购物网站模板秒杀列表-pppf.taobao.com整理搜集仅用于学习</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<link href="../css/jq.css" rel="stylesheet" type="text/css">
+<link href="../css/manage.css" rel="stylesheet" type="text/css">
+<link href="../css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/refresh.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/groupbuydetail.js"></script>
+<script type="text/javascript" src="../js/seckill.js"></script>
+<script type="text/javascript" src="../js/coupon.js"></script>
+<script type="text/javascript" src="../js/book.js"></script>
+<script type="text/javascript" src="../js/shop.js"></script>
+<script type="text/javascript" src="../js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/mu-mobi/js/timer.js?date=new Date()"></script>
+
+<script type="text/javascript">
+var refreshStatus = function(){
+		var options = {
+			    url:"member/refreshInfo.action;jsessionid=437B07F721EBD615364D2118C387F151",
+				dataType:'json',
+				error:function(a,b){
+					//alert("用户信息刷新失败，请重试！");
+				},
+				success: function(data) {
+					if(!data.phoneno){
+						$.mobile.activePage.find("#loginDiv").html("<a data-transition='slide' class='cwhite' rel='external' href='HTMLLoginServlet'>登录</a>&nbsp;|&nbsp;<a  class='cwhite' data-ajax=\"false\" data-transition=\"slide\" href=\"../member/registerPage.action@skyarmlogin=0&reUrl=aHR0cDovL20uYzM2NS5jb20vbXUtbW9iaS9pbmRleC5hY3Rpb24_2FcHQ9cHBz\">注册</a>");
+					}else{
+						var nick ;
+						if(data.nickname){
+							nick = data.nickname;
+						}else{
+							nick = data.phoneno ;
+						}
+						$.mobile.activePage.find("#loginDiv").html("您好，"+nick+" | <a data-transition='slide'  class='cwhite' href='../member/accountGroupManage.action@currencyKind=12'>个人中心</a> | <a data-transition='slide'  class='cwhite' href='../../mucart/h5/toCartOrderList.action'>购物车</a> | <a id='logouA'  class='cwhite' href='javascript:logout(\"others\",\";jsessionid=437B07F721EBD615364D2118C387F151\");'>退出</a>");
+					}	
+				}
+		};
+		$.ajax(options);
+}
+
+
+$(document).delegate('#home','pageshow',
+      function(){
+          refreshStatus();
+      }
+);
+</script><script type="text/javascript">
+var jssessionid=';jsessionid=437B07F721EBD615364D2118C387F151';
+
+</script> 
+</head>
+<body>
+<div data-role="page" id="seckillpage">
+<!-- 页头 -->
+<div class="top">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="80px">
+        <a href="javascript:window.history.back();" class="top-return" data-transition="slide">返回</a>
+        </td>
+        <td class="top_title">秒杀</td>        
+        <td class="user">
+        <!--
+        	<a href="http://m.c365.com/mu-mobi/member/orderVerify.action;jsessionid=437B07F721EBD615364D2118C387F151"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>
+        	<a href="javascript:showUserHome();"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>  
+        	-->
+        	<a href="javascript:showUserHome();"><img src="../../images/caidan.png"></a>  
+        </td>
+      </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+var showUserHome = function(){
+		member_center_menu();
+};
+
+</script>
+
+<script type="text/javascript">
+var member_center_menu = function(){
+var scrollHeight=document.body.scrollHeight;
+	$.mobile.activePage.find('#leftmenumask').show();
+	$.mobile.activePage.find('#left_menu_in').toggle('slow');
+	$.mobile.activePage.find('#left_menu_in').css("top:10");
+	
+}
+var leftsearch = function(){
+  var leftkeywords=$.mobile.activePage.find("#leftkeywords").val();
+  var leftsearchKind=$.mobile.activePage.find("#leftsearchKind").val();
+  if(!leftkeywords){
+    alert("请输入关键字");
+    $.mobile.activePage.find("#leftkeywords").focus();
+	return false;
+  }
+  window.location.href="../search.action@lsk=1&searchKind="+leftsearchKind+"&keywords="+leftkeywords;
+}
+</script>
+<div class="left_menu" style="z-index:9999;">
+   <div id="left_menu_in" style="display:none;z-index:9999;" class="left_menu_in">
+     <ul>
+      <li>
+          <div class="left_search"><input class="left_search_ipt" id="leftkeywords" name="leftkeywords" type="text" value="" maxlength="64"></div>
+          <div class="left_search_btn"><input class="left_search_btn2" name="" type="button" onclick="leftsearch();"></div>
+          <input type="hidden" id="leftsearchKind" name="searchKind" value="2" />
+       </li>
+        <li><a data-ajax="false" data-transition="slide" rel="external" href="../HTMLLoginServlet" >登录</a></li>
+        <li><a data-transition="slide"  href="../member/registerPage.action">注册</a></li>
+     <li>
+     <a href="../changeCityPage.action" data-role="button">切换城市
+     <span style="float:right;">晋优惠太原站&nbsp;&nbsp;&nbsp;&nbsp;</span></a>
+     </li>
+	<li><a data-transition="slide"  href="../index.action">晋优惠首页</a></li>
+     </ul>
+     
+   </div>
+   
+   <div class="popup" style="display:none;">
+     <a href="javascript:member_center_menu();"><img src="../images/tang_a.png"></a>
+   </div>
+ </div>
+<div id="leftmenumask" style="height:2980px;display:none;top:100;" data-role="none" onclick="leftclick();"></div>
+
+ 
+
+<script type="text/javascript">
+var areaType= 1;
+var industry = 2;
+var select = 3;
+var showType = 4;
+
+var showSearch = function(id){
+	//弹出
+	$.mobile.activePage.find('#leftmask').show();
+	$.mobile.activePage.find('#seardiv').toggle('slow');
+	$.mobile.activePage.find('#seardiv').css("top:10");
+	
+	if(id==areaType){
+		SelectArea();
+	}else if(id==industry){
+		SelectIndustry();
+	}else if(id==select){
+		SelectSort();
+	}else if(id == showType){
+		SelectShowType();
+	}
+	$.mobile.activePage.find('#toolardiv').hide("slow");
+	
+};
+
+
+var hideall = function(){
+	$.mobile.activePage.find('#areadiv').hide();
+	$.mobile.activePage.find('#industrydiv').hide();
+	$.mobile.activePage.find('#modiv').hide();
+	$.mobile.activePage.find('#showTypediv').hide();
+	
+	$("#areabt").removeClass("select");
+	$("#industrybt").removeClass("select");
+	$("#selectbt").removeClass("select");
+	$("#showTypebt").removeClass("select");
+};
+
+var SelectArea = function(){
+	hideall();
+	$.mobile.activePage.find('#areadiv').show("fast");
+	$("#areabt").addClass("select");
+};
+
+var SelectIndustry = function(){
+	hideall();
+	$.mobile.activePage.find('#industrydiv').show("fast");
+	$("#industrybt").addClass("select");
+};
+
+var SelectSort = function(){
+	hideall();
+	$.mobile.activePage.find('#modiv').show("fast");
+	$("#selectbt").addClass("select");	
+};
+
+var SelectShowType = function(){
+	hideall();
+	$.mobile.activePage.find('#showTypediv').show("fast");
+	$("#showTypebt").addClass("select");
+};
+
+
+
+
+
+var queryByarea = function(provinid,cityid,areaid){
+	querySequece(provinid,cityid,areaid,0,0,0,0,0);
+};
+var queryByIndustry = function(firstindid,secindid){
+	querySequece(0,10000,0,firstindid,secindid,0,0,0);
+};
+var queryBySelect = function(name,type){
+	querySequece(0,10000,0,0,0,name,type,0);
+};
+var queryByStatue = function(status){
+	querySequece(0,10000,0,0,0,0,0,status);
+};
+
+
+var querySequece = function(province,city,area,firstindustry,secIndustry,sortname,sorttype,activeStatue){
+	var url ="http://m.c365.com/mu-mobi/seckillnpublish/querySeckill.action;jsessionid=437B07F721EBD615364D2118C387F151?";
+	url+="&seqence.cityId="+city;
+	url+="&seqence.areaId="+area;
+	url+="&seqence.secIndustryId="+firstindustry;
+	url+="&seqence.thrdIndustryId="+secIndustry;
+	url+="&seqence.sortName="+sortname;
+	url+="&seqence.orderType="+sorttype;
+	url+="&seqence.activeStatue="+activeStatue;
+	
+	
+	$("#seardiv").hide();
+	$("#leftmask").hide();
+	window.location.href=url;
+};
+
+
+var showFirstInd = function(obj){
+$("#inddiv .r_main").hide();
+$(obj).toggleClass("show");
+$(obj).toggleClass("hide");
+$(obj).next().toggle("slow");
+};
+$(document).ready(function(){
+	$("#leftmask").bind("click",function(){
+		$("#seardiv").hide("slow");
+		$("#leftmask").hide("slow");
+	});
+});
+
+</script>
+	 	<div class="selt selt2"  data-role="none">
+	  <ul style="width:100%;">
+	  	<li><a href="javascript:showSearch(2);"  style="display:block;border-left:1px #ccc solid;">全部分类</a></li>
+	    <li><a href="javascript:showSearch(1);"  style="display:block;border-left:1px #ccc solid;">地区</a></li>
+	    	 <li><a href="javascript:showSearch(4);"  style="display:block;border-left:1px #ccc solid;">筛选</a></li>
+	    <li><a href="javascript:showSearch(3);"  style="display:block;border-left:1px #ccc solid;">排序</a></li>
+	  </ul>
+	  </div>
+<div id="leftmask" style="height:2980px;display:none;top:100;" data-role="none"></div>
+    
+  
+ <div class="search_new" id="seardiv"  style="display:none;top:10;" data-role="none">	
+	 	<div class="search_lable c-fix search_lable2">
+	    <ul style="width:100%;">
+	      <li><a id="industrybt" href="javascript:SelectIndustry();">分类</a></li>
+	      <li><a id="areabt" class="select" href="javascript:SelectArea();">地区</a></li>
+	    	 <li><a id="showTypebt" href="javascript:SelectShowType();">筛选</a></li>
+	     <li><a id="selectbt" href="javascript:SelectSort();">排序</a></li>
+	    </ul>
+	  </div>
+
+    <ul class="area c-fix" id="industrydiv" style="display:none;">
+    	 <li>
+	        <h2 class="l_main">分类</h2>
+	        <ul class="r_main">
+					<li><a href="javascript:queryByIndustry(0,0);" class="area-selected"  >所有类型</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10680,0);">酒店旅游</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10697,0);">商品购物</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10260,0);">休闲娱乐</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10296,0);">餐饮美食</a></li>
+						<li><a     dataurl="#" href="javascript:queryByIndustry(10331,0);">生活服务</a></li>
+	        </ul>
+	      </li>
+	      <li>
+	        <h2 class="l_main">请选择</h2>
+	        <ul class="r_main">
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10681);">星级酒店</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10685);">连锁酒店</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10687);">普通宾馆</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10690);">旅游景点</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10692);">市郊景区</a></li>
+						<li><a  dataurl="#" href="javascript:queryByIndustry(0,10694);">旅行社</a></li>
+	        </ul>
+	      </li>
+  </ul>
+    
+    
+   <ul class="area c-fix" id="areadiv">
+      <li>
+        <h2 class="l_main">区域</h2>
+        <ul class="r_main">
+				<li><a href="javascript:queryByarea(9999,10000,0);" class="area-selected"  >所有区域</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10001);">小店区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10002);">杏花岭区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10003);">万柏林区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10004);">清徐县</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10005);">娄烦县</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10006);">迎泽区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10007);">尖草坪区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10008);">晋源区</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10009);">阳曲县</a></li>
+					<li><a  dataurl="#" href="javascript:queryByarea(9999,10000,10010);">古交</a></li>
+				
+        </ul>
+      </li>
+  </ul>
+    <ul  class="div_mo"  id="modiv" style="width:100%;">    
+   		<li><a href="javascript:queryBySelect(0,0);">默认 </span></a></li>
+   		<li>&nbsp;</li>
+   		<li><a  href="javascript:queryBySelect(1,1);"><span>销量&nbsp;&nbsp;<img src="../../images/arrow-c.png" alt="" /></span></a></li>
+  		<li>&nbsp;</li>
+   		<li><a  href="javascript:queryBySelect(2,1);"><span>评论&nbsp;&nbsp;<img src="../../images/arrow-c.png" alt="" /></span></a></li>
+  	</ul>
+  
+  	<ul  class="div_mo"  id="showTypediv" style="width:100%;">    
+   		<li><a class="area-selected" href="javascript:queryByStatue(0);">默认 </span></a></li>
+   		<li>&nbsp;</li>
+  		<li><a  href="javascript:queryByStatue(2);"><span>进行中&nbsp;&nbsp;</span></a></li>
+  		<li>&nbsp;</li>
+   		<li><a  href="javascript:queryByStatue(1);"><span>即将开始&nbsp;&nbsp;</span></a></li>
+   	</ul>
+  	
+  	
+</div>
+  <div id="seckillwrapper" class="wrapper" style="top:70px">
+  <div id="tuan" class="sckill">
+  <div id="pullDown" style="display:none">
+  		<div class="to-update">
+			<span class="pullDownIcon"></span><span class="pullDownLabel">下拉加载更多...</span>
+		</div>
+  </div>
+  
+
+ 
+ <br>
+    <ul id="seckillul">
+	      <li>
+	        <h1><a  href="querySeckillByID.html" data-ajax="false">【三店通用】3月6日—3月15日10元秒杀双双尚品梦特娇130D纤维连裤袜500份！</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a  href="querySeckillByID.html" data-ajax="false"">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140306/92701394074052245.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>10</strong>元<span class="g_price">98元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43309" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(56666477,'#time43309',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+	      <li>
+	        <h1><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43213">【迎泽区】3月6日-3月15日0元秒杀苗老祖祛痘套餐100份!</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43213">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140303/55531393820477067.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>0</strong>元<span class="g_price">258元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43213" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(62066477,'#time43213',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+	      <li>
+	        <h1><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43233">【杏花岭区】3月7日-3月9日98元秒杀张裕橡木桶干红一瓶(买一赠一)150份 !</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43233">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140303/25331393835949915.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>98</strong>元<span class="g_price">158元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43233" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(36866477,'#time43233',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+	      <li>
+	        <h1><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43236">【杏花岭区】3月7日-3月9日38元秒杀馆藏干红葡萄酒150份 !</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43236">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140303/27071393836934166.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>38</strong>元<span class="g_price">68元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43236" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(40466476,'#time43236',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+	      <li>
+	        <h1><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43251">【小店区】3月7日-3月15日168元秒杀孕妇写真特惠套系90份 !</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43251">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140304/29171393901696875.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>168</strong>元<span class="g_price">888元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43251" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(42266476,'#time43251',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+	      <li>
+	        <h1><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43278">【小店区】3月7日-3月15日188元秒杀馨韵国际摄影孕妇写真套系90份 !</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43278">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140304/68671393922220108.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>188</strong>元<span class="g_price">988元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43278" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(51266476,'#time43278',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+	      <li>
+	        <h1><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43260">【迎泽区】3月7日-3月15日19元秒杀珂洛丽12星座纯色美甲套系90份 !</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43260">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140304/83281393910357387.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>19</strong>元<span class="g_price">270元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43260" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(54866476,'#time43260',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+	      <li>
+	        <h1><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43269">【迎泽区】3月7日-3月15日48元秒杀珂洛丽12星座带造型美甲套系90份 !</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43269">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140304/93941393914507716.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>48</strong>元<span class="g_price">320元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43269" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(58466476,'#time43269',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+	      <li>
+	        <h1><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43239">【迎泽区】3月7日-3月15日6元秒杀安然纳米汗蒸套餐90份 !</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43239">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140304/30441393896305888.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>6</strong>元<span class="g_price">38元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43239" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(60266476,'#time43239',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+	      <li>
+	        <h1><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43287">【迎泽区】3月7日-3月15日0元秒杀欧妆美容套系135份 !</a></h1>
+	        <table width="100%" border="0">
+	          <tr>
+	           <td width="110px"><a data-transition="slide" href="querySeckillByID.action@seckillTimeID=43287">
+	           <img width="100px" height="66px" src="http://183.203.16.186:443//seckill/20140304/69871393918157677.jpg"></a></td>
+	           <td valign="top">
+	             <p>价格：<strong>0</strong>元<span class="g_price">664元</span></p>
+	             
+			   		 	<p>距离开始：<span id="time43287" class="cred"></span></p>
+		       		<script type="text/javascript">
+		       			timerUtil(62066475,'#time43287',2);
+		       		</script>
+	             
+	             <p>
+								<input  class="sckill_btna" name="" type="button" value="即将开始" data-role="none" />
+	            
+	             </p>
+	           </td>
+	         </tr>  
+	       </table>
+	      </li>
+    </ul>
+    <input type="hidden" value="1" id="hiddenpage" name="hiddenpage"/>
+    <input type="hidden" value="2" id="pageTotal" name="pageTotal"/>
+     <input type="hidden" value="http://login.c365.com/mu-sso/servlet/Html5Login?callback=http%3A%2F%2Fm.c365.com%2Fmu-mobi%2Fseckillnpublish%2FquerySeckill.action%3Fcityid%3D10000" id="loginUrl" name="loginUrl"/>
+   	 <div id="pullUp">
+   	 		<div class="to-update">
+				<span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多。。。</span>
+			</div>
+		</div>
+<footer>
+    <div class="footer_nav"><a href="../wap/index.action" data-ajax="false">简版</a> 丨 <a href="../downClient.action" data-ajax="false">客户端</a></div>
+    <div class="footer_bottom">
+      <p>晋优惠[晋ICP备11002219]</p>
+        <p>中国移动通信集团山西有限公司</p>
+    </div>
+  </footer>
+<img style="display:none;" src="../../../hm.baidu.com/hm.gif@si=b0c1b8c5ce6123a5ae92c8ffa9b7582f&et=0&nv=0&st=4&lt=1394293497&v=wap-2-0.3&rnd=680583810" width="0" height="0"  />
+  </div>
+    <!-- msg window -->
+    <div id="tuan_ok" style="top:70px;">
+	    <h2 class="text-center cgreen"><span id="result">秒杀成功！</span></h2>
+	    <p class="text-center"><span id="msg">请到个人账户中查看秒杀结果。</span></p>
+	    <p class="text-center"><input id="closeMsg" name="" type="button" value="我知道了"  data-role="none" /></p>
+    </div>
+  </div>
+  <script type="text/javascript">
+  
+var myScrollseckill,
+	seckillpullDownEl, seckillpullDownOffset,
+	seckillpullUpEl, seckillpullUpOffset,
+	seckillgeneratedCount = 0;
+
+function pullDownAction () {
+	seckillpullDownEl.querySelector('.pullDownLabel').innerHTML = '没有更多...';	
+	skill_resultFunction();
+}
+
+function skill_resultFunction(isEnd){
+    if(myScrollseckill!=null){
+      myScrollseckill.refresh();
+    }
+    if(isEnd){
+      seckillpullUpEl.querySelector('.pullUpLabel').innerHTML = '没有更多。。。';
+    }
+}
+
+function skill_destroy(){
+    if(myScrollseckill!=null){
+      myScrollseckill.destroy();
+    }
+}
+
+function pullUpAction () {
+	//修改些函数使用ajax查询数据 注意调用ajax成功后要调用  scroll.refresh();	
+	querySeckill('../default.htm',skill_resultFunction,10000,0,0,0,0,0,0);
+}
+
+function loaded() {
+	$seckillwrapper = $("#seckillwrapper");
+	seckillpullDownEl = $seckillwrapper.find('#pullDown').get(0);
+	seckillpullDownOffset = seckillpullDownEl.offsetHeight;
+	seckillpullUpEl = $seckillwrapper.find('#pullUp').get(0);
+	seckillpullUpOffset = seckillpullUpEl.offsetHeight;
+	if(myScrollseckill!=null){
+		myScrollseckill.destroy();
+	}
+	myScrollseckill = new iScroll('seckillwrapper', {
+		useTransition: true,
+		topOffset: seckillpullDownOffset,
+		onRefresh: function () {
+			if (seckillpullDownEl.className.match('loading')) {
+				seckillpullDownEl.className = '';
+				seckillpullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉加载更多...';
+				seckillpullUpEl.className = '';
+				seckillpullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多。。。';
+			} else if (seckillpullUpEl.className.match('loading')) {
+				seckillpullUpEl.className = '';
+				seckillpullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多。。。';
+			}
+		},
+		onScrollMove: function () {
+			if (this.y > 5 && !seckillpullDownEl.className.match('flip')) {
+				seckillpullDownEl.className = 'flip';
+				seckillpullDownEl.querySelector('.pullDownLabel').innerHTML = '松开刷新...';
+				this.minScrollY = 0;
+			} else if (this.y < 5 && seckillpullDownEl.className.match('flip')) {
+				seckillpullDownEl.className = '';
+				seckillpullDownEl.querySelector('.pullDownLabel').innerHTML = '下拉加载更多...';
+				this.minScrollY = -seckillpullDownOffset;
+			} else if (this.y < (this.maxScrollY - 5) && !seckillpullUpEl.className.match('flip')) {
+				seckillpullUpEl.className = 'flip';
+				seckillpullUpEl.querySelector('.pullUpLabel').innerHTML = '松开刷新。。。';
+				this.maxScrollY = this.maxScrollY;
+			} else if (this.y > (this.maxScrollY + 5) && seckillpullUpEl.className.match('flip')) {
+				seckillpullUpEl.className = '';
+				seckillpullUpEl.querySelector('.pullUpLabel').innerHTML = '上拉加载更多。。。';
+				this.maxScrollY = seckillpullUpOffset;
+			}
+		},
+		onScrollEnd: function () {
+			if (seckillpullDownEl.className.match('flip')) {
+				seckillpullDownEl.className = 'loading';
+				seckillpullDownEl.querySelector('.pullDownLabel').innerHTML = '正在加载。。。';				
+				pullDownAction();	// Execute custom function (ajax call?)
+			} else if (seckillpullUpEl.className.match('flip')) {
+				seckillpullUpEl.className = 'loading';
+				seckillpullUpEl.querySelector('.pullUpLabel').innerHTML = '正在加载。。。';				
+				pullUpAction();	// Execute custom function (ajax call?)
+			}
+		}
+	});
+	//setTimeout(function () { document.getElementById('wrapper').style.left = '0'; }, 800);
+	skill_resultFunction();
+}
+//jquery mobile转场后事件
+$('#seckillpage').bind('pageshow',loaded);
+$('#seckillpage').bind('pagehide',skill_destroy);
+
+var set_center_sk = function (obj) { 
+	obj.css("position","absolute"); 
+	obj.css("top", ( $(window).height() - obj.height() ) / 2 + "px"); 
+} 
+
+$(document).on("pageinit","#seckillpage",function(){
+  $(".sckill_btn").on("tap",function(){
+    var obj_id =  $(this).attr("id");
+    var skid = obj_id.replace('seckillbt','');
+    seckillit(skid,'../../../login.c365.com/mu-sso/servlet/Html5Login@callback=http_253A_252F_252Fm.c365.com_252Fmu-mobi_252Fseckillnpublish_252FquerySeckill.action%3Fcityid%3D10000','#'+obj_id);
+  });           
+           
+});
+
+
+</script>
+
+</div>
+</body>
+</html>

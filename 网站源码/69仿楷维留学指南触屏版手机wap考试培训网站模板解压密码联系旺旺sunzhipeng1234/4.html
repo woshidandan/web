@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport" />
+        <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1" media="(device-height: 568px)" name="viewport">
+            <meta content="yes" name="apple-mobile-web-app-capable" /> 
+            <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+            <meta content="telephone=no" name="format-detection" /> 
+            <link rel="stylesheet" type="text/css" href="templates/kw/css/touch.css" />
+            <title>楷维留学指南触屏版</title>
+            <script type="text/javascript" src="templates/kw/js/zepto_min.js"></script>
+            <script type="text/javascript" src="templates/kw/js/touchslider.js"></script>
+    </head>
+    <body>
+<div class="top">
+    <div class="fanhui"><a href="index.php">返回</a></div>
+    <h2>影视制作</h2>
+</div>
+
+<div class="list">
+    <p><strong>影视制作</strong>
+        <span>Cinematography and Film/Video Production</span></p>
+    <p>专业简介：</p>
+    <div class="jianjie">
+        <p><p>　　对于初学者来说，你需要学习电影制作技术方面的知识——灯光、编辑、摄影技术和音响设备。你还要研究有关电影制作所有的要素以及这些要素是如何彼此影响的——从执导一部影片到预算和市场宣传。最终你将能够形成自己的想法，并使这些想法贯穿于编剧和制作的开始到结束。</p><p>　　如果没有电影史的概述，影视制作专业就不完整，进步和创新赋予电影今天的地位以及并创造了那些被封为神圣经典的具有里程碑意义的影片。你需要学习电影理论和评论，有助于你开始培养自己的分析能力。从社会学的角度来看，你还要研究电影在文化中的作用以及它是如何影响我们的。</p><p>　　很多大学影视制作专业会布置学生自己拍摄短片或协助他人拍片。有些专业还会要求学生在某个特定电影领域里选择一个主攻方向，例如导演或编剧并完整的制作一部作品。一定要仔细研究该专业入学要求，找到一个最适合自己的。</p><br /></p>
+    </div>
+</div>
+
+<div class="newtitle">
+    <ul id="pagenavi1">
+        <li><span ><a href="#">核心课程</a></span></li>
+        <li><span><a href="#">升学方向</a></span></li>
+        <li><span><a href="#">常见职业</a></span></li>
+    </ul>
+</div>
+<div class="newbox">
+    <ul class="bigbox" id="slider1" >
+        <li class="li_list">
+                                <p>二维设计</p>  
+                                        <p>艺术史</p>  
+                                        <p>绘图</p>  
+                                        <p>媒体评论</p>  
+                                        <p>数码技术</p>  
+                                        <p>多媒体作品</p>  
+                                        <p>影视剧本创作</p>  
+                                        <p>数字音频和视频</p>  
+                                        <p>纪录片</p>  
+                                        <p>电影剪辑</p>  
+                                        <p>电影评论</p>  
+                                        <p>电影历史和理论</p>  
+                                        <p>电影艺术</p>  
+                                        <p>制作和导演</p>  
+                                        <p>叙事视频</p>  
+                                        <p>银幕执导</p>  
+                                        <p>美国电影</p>  
+                                        <p>大幅面摄影</p>  
+                                        <p>数码工具</p>  
+                                        <p>视觉思维基础</p>  
+                                        <p>纪实摄影</p>  
+                                        <p>摄影照明</p>  
+                                        <p>摄影装置</p>  
+                                        <p>数码影像</p>  
+                                        <p>多媒体项目</p>  
+                                        <p>广播新闻</p>  
+                                        <p>色彩理论与印刷  </p>  
+                            </li>
+        <li class="li_list" style-="margin-right:5px;">
+            <div class="pic_list" style="height:auto;">
+                <p style="line-height:30px; font-size:16px; text-align:left; display:block; height: auto; overflow: auto; background: none;"></p>
+            </div>
+        </li>
+        <li class="li_list" >
+                                <p>动漫/动画设计师</p>  
+                                        <p>电影导演</p>  
+                                        <p>电影编辑</p>  
+                                        <p>戏剧，电影，电视技术员</p>  
+                    
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+    for (n = 1; n <= 1; n++) {
+        var page = 'pagenavi' + n;
+        var mslide = 'slider' + n;
+        var as = document.getElementById(page).getElementsByTagName('a');
+        var tt = new TouchSlider({id: mslide, 'auto': '-1', fx: 'ease-out', direction: 'left', speed: 600, timeout: 5000, 'before': function(index) {
+                var as = document.getElementById(this.page).getElementsByTagName('a');
+                as[this.p].className = '';
+                as[index].className = 'curnewbtn';
+                this.p = index;
+                //var txt = as[index].innerText;
+                //$("#" + this.page).parent().find('.emtitle').text(txt);
+                //var txturl = as[index].getAttribute('href');
+                // var turl = txturl.split('#');
+                //$("#" + this.page).parent().find('.go_btn').attr('href', turl[1]);
+                // $("#" + this.page).parent().find('.go_btn').hide();
+                // $("#" + this.page).parent().find('.go_btn').eq(index).show();
+            }});
+        tt.page = page;
+        tt.p = 0;
+        for (var i = 0; i < as.length; i++) {
+            (function() {
+                var j = i;
+                as[j].tt = tt;
+                as[j].onclick = function() {
+                    this.tt.slide(j);
+                    return false;
+                }
+            })();
+        }
+    }
+</script>
+
+<div class="footer">
+    <p>Copyright @ 2011-2015 keywin.org</p>
+    <p>联系我们：<a href="tel_3A4000601681">4000-601-681</a></p>
+    <p><a href="../www.keywin.org/default.htm">电脑版</a>  <a href="../www.keywin.org/user/mobile/default.htm">注册</a> <a href="../www.keywin.org/user/default.htm">登录</a></p>
+</div>
+</body>
+</html>

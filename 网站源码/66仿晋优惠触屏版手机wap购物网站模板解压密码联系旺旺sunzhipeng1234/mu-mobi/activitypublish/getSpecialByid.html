@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=B5677A4B361E98A05CFF8946968A6EFE";
+</script><title>仿晋优惠触屏版手机wap购物网站模板专题正文-pppf.taobao.com整理搜集仅用于学习</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<link href="../css/jq.css" rel="stylesheet" type="text/css">
+<link href="../css/manage.css" rel="stylesheet" type="text/css">
+<link href="../css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/refresh.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/groupbuydetail.js"></script>
+<script type="text/javascript" src="../js/seckill.js"></script>
+<script type="text/javascript" src="../js/coupon.js"></script>
+<script type="text/javascript" src="../js/book.js"></script>
+<script type="text/javascript" src="../js/shop.js"></script>
+<script type="text/javascript" src="../js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/mu-mobi/js/timer.js?date=new Date()"></script>
+
+<script type="text/javascript">
+var refreshStatus = function(){
+		var options = {
+			    url:"member/refreshInfo.action;jsessionid=B5677A4B361E98A05CFF8946968A6EFE",
+				dataType:'json',
+				error:function(a,b){
+					//alert("用户信息刷新失败，请重试！");
+				},
+				success: function(data) {
+					if(!data.phoneno){
+						$.mobile.activePage.find("#loginDiv").html("<a data-transition='slide' class='cwhite' rel='external' href='HTMLLoginServlet'>登录</a>&nbsp;|&nbsp;<a  class='cwhite' data-ajax=\"false\" data-transition=\"slide\" href=\"../member/registerPage.action@skyarmlogin=0&reUrl=aHR0cDovL20uYzM2NS5jb20vbXUtbW9iaS9pbmRleC5hY3Rpb24_2FcHQ9cHBz\">注册</a>");
+					}else{
+						var nick ;
+						if(data.nickname){
+							nick = data.nickname;
+						}else{
+							nick = data.phoneno ;
+						}
+						$.mobile.activePage.find("#loginDiv").html("您好，"+nick+" | <a data-transition='slide'  class='cwhite' href='../member/accountGroupManage.action@currencyKind=12'>个人中心</a> | <a data-transition='slide'  class='cwhite' href='../../mucart/h5/toCartOrderList.action'>购物车</a> | <a id='logouA'  class='cwhite' href='javascript:logout(\"others\",\";jsessionid=B5677A4B361E98A05CFF8946968A6EFE\");'>退出</a>");
+					}	
+				}
+		};
+		$.ajax(options);
+}
+
+
+$(document).delegate('#home','pageshow',
+      function(){
+          refreshStatus();
+      }
+);
+</script><script type="text/javascript">
+jssessionid=';jsessionid=B5677A4B361E98A05CFF8946968A6EFE';
+</script>
+</head>
+
+<body>
+<link href="../activity/gift/css/12580.css" rel="stylesheet" type="text/css" />
+<!-- 页头 -->
+<header>
+      <div id="logoutDiv" class="login_bg"><a data-transition="slide" rel="external" href="../HTMLLoginServlet" class="cwhite">登录</a>&nbsp;|&nbsp;<a data-ajax="false" data-transition="slide" class="cwhite" href="../member/registerPage.action">注册</a></div>
+      <div class="logo">
+        <table width="100%" border="0">
+          <tr>
+            <td width="228px">
+            <a href="../../../wap.uwxsx.com/wxcs/WlanSsoLogin"><img width="228px" height="55px;" src="../images/logo.png" align="absmiddle"></a>
+            </td>
+             <td valign="middle" align="center">
+           		  <a data-transition="slide" href="../changeCityPage.action" data-role="button"><div class="city_btn">太原</div></a>
+         	 </td>
+          </tr>
+        </table>
+      </div>
+    </header><div class="phone_center">
+<div class="phone_banner">
+<div class="phone_text">
+<p>活动时间：2013.11.14-2013.12.1</p>
+<p class="font_18">0元秒杀！</p>
+</div>
+</div>
+<div class="phone_content">
+<div class="phone_orange">
+<div class="quan_pic"><img src="../activity/gift/images/quan_pic01.png" /></div>
+<h3><span class="cyellow">岭峥糖炒栗子</span></h3>
+<div class="miao_text">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40066">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="cyellow">第一期：2013年<br />
+        11月14日——11月24日</td>
+    </tr>
+  </table>
+  <div class="phone_line"></div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40069">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="cyellow">第二期：2013年<br />
+        11月21日——12月1日</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="phone_green">
+<div class="quan_pic"><img src="../activity/gift/images/quan_pic02.png" /></div>
+<h3><span class="cgreen_a">馋猫零食</span></h3>
+<div class="miao_text">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40070">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="cgreen">第一期：2013年<br />
+        11月16日——11月24日</td>
+    </tr>
+  </table>
+  <div class="phone_line"></div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40071">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="cgreen">第二期：2013年<br />
+        11月20日——12月01日</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="phone_blue">
+<div class="quan_pic"><img src="../activity/gift/images/quan_pic03.png" /></div>
+<h3><span class="cblue">姐弟俩土豆粉</span></h3>
+<div class="miao_text">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40073">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="cblue">第一期：2013年<br />
+        11月15日——11月24日</td>
+    </tr>
+  </table>
+  <div class="phone_line"></div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40072">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="cblue">第二期：2013年<br />
+        11月22日——12月01日</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="green_red">
+<div class="quan_pic"><img src="../activity/gift/images/quan_pic04.png" /></div>
+<h3><span class="cred">环球约客</span></h3>
+<div class="miao_text">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40075">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="cred">第一期：2013年<br />
+        11月15日——11月24日</td>
+    </tr>
+  </table>
+  <div class="phone_line"></div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40074">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="cred">第二期：2013年<br />
+        11月22日——12月01日</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<div class="green_fen">
+<div class="quan_pic"><img src="../activity/gift/images/quan_pic5.png" /></div>
+<h3><span class="fen">梅森凯瑟</span></h3>
+<div class="miao_text">
+  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40067">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="fen">第一期：2013年<br />
+        11月14日——11月24日</td>
+    </tr>
+  </table>
+  <div class="phone_line"></div>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="45%"><a href="../seckillnpublish/querySeckillByID.action@seckillTimeID=40068">
+      <img src="../activity/gift/images/phone_btn.png" width="104" height="32" /></a></td>
+      <td width="55%" class="fen">第二期：2013年<br />
+        11月21日——12月01日</td>
+    </tr>
+  </table>
+</div>
+</div>
+
+</div>
+
+</div>
+    <!-- 页尾 -->
+<footer>
+    <div class="footer_nav"><a href="../wap/index.action" data-ajax="false">简版</a> 丨 <a href="../downClient.action" data-ajax="false">客户端</a></div>
+    <div class="footer_bottom">
+      <p>晋优惠[晋ICP备11002219]</p>
+        <p>中国移动通信集团山西有限公司</p>
+    </div>
+  </footer>
+<img style="display:none;" src="../../../hm.baidu.com/hm.gif@si=b0c1b8c5ce6123a5ae92c8ffa9b7582f&et=0&nv=0&st=4&lt=1394293560&v=wap-2-0.3&rnd=1865790043" width="0" height="0"  />
+</body>
+</html>

@@ -1,0 +1,38 @@
+body{padding:0;margin:0; font-size:14px; color:#292929; font-family:"微软雅黑"; line-height:22px;}
+address,optgroup{font-style:normal;}
+table{width:100%;border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;}
+ul, ol{list-style:none;}
+fieldset,img{border:none;}
+*{ padding:0; margin:0;}
+.c-fix:after{content:"";display:block;height:0;clear:both;}
+.c-fix{zoom:1;}
+/* font style */
+.cred,a.cred,a.cred:hover,.cred a,.cred a:hover {color:#6b1a17;}
+.fen,a.fen,a.fen:hover,.fen a,.fen a:hover {color:#633d2b;}
+.cgreen,a.cgreen,a.cgreen:hover,.cgreen a,.cgreen a:hover {color:#415719;} 
+.cgreen_a,a.cgreen_a,a.cgreen_a:hover,.cgreen_a a,.cgreen_a a:hover {color:#4b5e27;} 
+.cblue,a.cblue,a.cblue:hover,.cblue a,.cblue a:hover {color:#1c4966;}
+.cyellow,a.cyellow,a.cyellow:hover,.cyellow a,.cyellow a:hover {color:#5f4a19;}
+
+.phone_center { margin:auto; width:320px;}
+.phone_banner { background:url(../images/phone_banner.jpg) no-repeat; position:relative; height:329px;}
+.phone_text { position:absolute; bottom:25px; left:20px; color:#fff; line-height:30px;}
+.font_18 { font-size:18px;}
+.phone_content { background:url(../images/phone_bg.jpg) no-repeat;}
+.phone_orange,.phone_green,.phone_blue,.green_red,.green_fen { width:290px; height:150px; border-radius:5px; margin:auto; padding:10px 5px; margin-bottom:15px; position:relative;}
+.phone_orange { background:#fbc471;}
+.phone_green { background:#d5e698;}
+.phone_blue { background:#97d6f7;}
+.green_red { background:#f0917f;}
+.green_fen { background:#f9bf80;}
+.quan_pic { position:absolute; right:10px; top:10px; }
+
+.phone_orange h3,.phone_green h3,.phone_blue h3,.green_red h3,.green_fen h3 { font-size:20px;padding-left:40px; font-weight:100; padding-top:10px;}
+.phone_orange h3 { background:url(../images/icon_01.png) no-repeat; height:32px; }
+.phone_green h3 { background:url(../images/icon_02.png) no-repeat; }
+.phone_blue h3 { background:url(../images/icon_03.png) no-repeat; }
+.green_red h3 { background:url(../images/icon_04.png) no-repeat; }
+.green_fen h3 { background:url(../images/icon_05.png) no-repeat; }
+.miao_text { padding-top:10px;}
+.phone_line { border-bottom:2px dashed #fff; padding:5px 0;}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base  />
+<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=2.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script type="text/javascript">
+wjsessionid=";jsessionid=D0DAE1EA0B225515CC4A35C782036F6A";
+</script><title>仿晋优惠触屏版手机wap购物网站模板优惠券正文-pppf.taobao.com整理搜集仅用于学习</title>
+<link href="../css/css.css" rel="stylesheet" type="text/css">
+<link href="../css/jq.css" rel="stylesheet" type="text/css">
+<link href="../css/manage.css" rel="stylesheet" type="text/css">
+<link href="../css/jquery.superbox.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="../css/refresh.css" />
+<script type="text/javascript" src="../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript" src="../js/jquery.mobile-1.2.0.min.js"></script>
+<script type="text/javascript" src="../js/iscroll.js"></script>
+<script type="text/javascript" src="../js/groupbuydetail.js"></script>
+<script type="text/javascript" src="../js/seckill.js"></script>
+<script type="text/javascript" src="../js/coupon.js"></script>
+<script type="text/javascript" src="../js/book.js"></script>
+<script type="text/javascript" src="../js/shop.js"></script>
+<script type="text/javascript" src="../js/operation.js"></script>
+<script type="text/javascript" src="http://m.c365.com/mu-mobi/js/timer.js?date=new Date()"></script>
+
+<script type="text/javascript">
+var refreshStatus = function(){
+		var options = {
+			    url:"member/refreshInfo.action;jsessionid=D0DAE1EA0B225515CC4A35C782036F6A",
+				dataType:'json',
+				error:function(a,b){
+					//alert("用户信息刷新失败，请重试！");
+				},
+				success: function(data) {
+					if(!data.phoneno){
+						$.mobile.activePage.find("#loginDiv").html("<a data-transition='slide' class='cwhite' rel='external' href='HTMLLoginServlet'>登录</a>&nbsp;|&nbsp;<a  class='cwhite' data-ajax=\"false\" data-transition=\"slide\" href=\"../member/registerPage.action@skyarmlogin=0&reUrl=aHR0cDovL20uYzM2NS5jb20vbXUtbW9iaS9pbmRleC5hY3Rpb24_2FcHQ9cHBz\">注册</a>");
+					}else{
+						var nick ;
+						if(data.nickname){
+							nick = data.nickname;
+						}else{
+							nick = data.phoneno ;
+						}
+						$.mobile.activePage.find("#loginDiv").html("您好，"+nick+" | <a data-transition='slide'  class='cwhite' href='../member/accountGroupManage.action@currencyKind=12'>个人中心</a> | <a data-transition='slide'  class='cwhite' href='../../mucart/h5/toCartOrderList.action'>购物车</a> | <a id='logouA'  class='cwhite' href='javascript:logout(\"others\",\";jsessionid=D0DAE1EA0B225515CC4A35C782036F6A\");'>退出</a>");
+					}	
+				}
+		};
+		$.ajax(options);
+}
+
+
+$(document).delegate('#home','pageshow',
+      function(){
+          refreshStatus();
+      }
+);
+</script><link href="../css/css.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+var jssessionid=';jsessionid=D0DAE1EA0B225515CC4A35C782036F6A';
+</script>
+</head>
+<body>
+<div data-role="page" id="cp_describe">
+<!-- 页头 -->
+<div class="top">
+    <table width="100%" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="80px">
+        <a href="javascript:window.history.back();" class="top-return" data-transition="slide">返回</a>
+        </td>
+        <td class="top_title">优惠</td>        
+        <td class="user">
+        <!--
+        	<a href="http://m.c365.com/mu-mobi/member/orderVerify.action;jsessionid=D0DAE1EA0B225515CC4A35C782036F6A"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>
+        	<a href="javascript:showUserHome();"><img src="http://m.c365.com/mu-mobi//images/user.png"></a>  
+        	-->
+        	<a href="javascript:showUserHome();"><img src="../../images/caidan.png"></a>  
+        </td>
+      </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+var showUserHome = function(){
+		member_center_menu();
+};
+
+</script>
+
+<script type="text/javascript">
+var member_center_menu = function(){
+var scrollHeight=document.body.scrollHeight;
+	$.mobile.activePage.find('#leftmenumask').show();
+	$.mobile.activePage.find('#left_menu_in').toggle('slow');
+	$.mobile.activePage.find('#left_menu_in').css("top:10");
+	
+}
+var leftsearch = function(){
+  var leftkeywords=$.mobile.activePage.find("#leftkeywords").val();
+  var leftsearchKind=$.mobile.activePage.find("#leftsearchKind").val();
+  if(!leftkeywords){
+    alert("请输入关键字");
+    $.mobile.activePage.find("#leftkeywords").focus();
+	return false;
+  }
+  window.location.href="../search.action@lsk=1&searchKind="+leftsearchKind+"&keywords="+leftkeywords;
+}
+</script>
+<div class="left_menu" style="z-index:9999;">
+   <div id="left_menu_in" style="display:none;z-index:9999;" class="left_menu_in">
+     <ul>
+      <li>
+          <div class="left_search"><input class="left_search_ipt" id="leftkeywords" name="leftkeywords" type="text" value="" maxlength="64"></div>
+          <div class="left_search_btn"><input class="left_search_btn2" name="" type="button" onclick="leftsearch();"></div>
+          <input type="hidden" id="leftsearchKind" name="searchKind" value="3" />
+       </li>
+        <li><a data-ajax="false" data-transition="slide" rel="external" href="../HTMLLoginServlet" >登录</a></li>
+        <li><a data-transition="slide"  href="../member/registerPage.action">注册</a></li>
+	<li><a data-transition="slide"  href="../index.action">晋优惠首页</a></li>
+     </ul>
+     
+   </div>
+   
+   <div class="popup" style="display:none;">
+     <a href="javascript:member_center_menu();"><img src="../images/tang_a.png"></a>
+   </div>
+ </div>
+<div id="leftmenumask" style="height:2980px;display:none;top:100;" data-role="none" onclick="leftclick();"></div>
+
+
+<form action="" method="POST" id="pageMainForm">
+		<input type="hidden" id="loginurl" value="http://m.c365.com/mu-mobi/HTMLLoginServlet"/>
+    	<input type="hidden" id="scriptResultData" name="scriptResultData"  value='' />
+<div class="tuan-detail">
+    		<p class="area_b"><span>太原(小店区)</span></p>
+  <h1><strong class="cred">[优惠券]</strong>【小店区】晋优惠VIP会员享山西荣国际旅行社9.4折优惠！</h1>
+  <div class="product-pic"> <em>
+			9.4折
+  </em> <img src="http://183.203.16.186:443//coupon/20140304/70231393922933158.jpg"></div>
+  <div style="line-height: 30px; color: #f00; padding: 0 10px;">提示：该商品为优惠券，请下载后自行消费。</div>
+  <div class="price-box">
+    <div class="btn-tuan">
+    <em>
+         <input id="cp_downButton" name="" type="button" value="下载优惠券" onClick="downloadcoupon(2126,'../../../login.c365.com/mu-sso/servlet/Html5Login@callback=http_253A_252F_252Fm.c365.com_252Fmu-mobi_252Fcouponpublish_252FqueryCouponByID.action%3FcouponID%3D2126')" data-role="none"/>
+    </em></div>
+    <!-- msg window -->
+    <div id="tuan_ok">
+		    <h2 class="text-center cgreen" ><span id="result"></span></h2>
+		    <p class="text-center" ><span id="msg"></span></p>
+		    <p class="text-center"><input id="closeMsg" name="" type="button" value="我知道了" onClick="$.mobile.activePage.find('#tuan_ok').hide();" data-role="none"></p>
+    </div>
+    <div class="tuan-price">
+    	<!--
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>原价</td>
+          <td>折扣/优惠价</td>
+          <td>节省</td>
+        </tr>
+        <tr>
+          <td><del>&yen;0</del></td>
+          <td>
+          	
+       
+          
+          
+          
+          </td>
+          <td></td>
+        </tr>
+      </table>
+      -->
+    </div>
+  </div>
+  <div class="time-box"><div class="left">
+      <p><span class="fb f20 cred" id="cp_amount">2</span>人已下载</p>
+      <p class="cgreen" id="cp_statusText">
+      正在进行中
+      </p>
+  </div><div class="right">
+  <p>
+    <span class="cred">
+    开始：2013-12-18
+    </span>
+  </p>
+  <p>
+    <span class="cred">
+    结束：2014-12-17
+    </span>
+  </p>
+  </div>
+  </div>
+
+  <div class="shareto">
+          <span><a target="_blank" href="javascript:favorite(2126,'../../../login.c365.com/mu-sso/servlet/Html5Login@callback=http_253A_252F_252Fm.c365.com_252Fmu-mobi_252Fcouponpublish_252FqueryCouponByID.action%3FcouponID%3D2126');" class="qqmsn" id="cp_favorite">收藏</a></span>
+         <!--
+  分享：            
+	  <span><a target="_blank" href="javascript:void(0)" class="tweibo">腾讯</a></span>
+	  <span><a target="_blank" href="javascript:void(0)" class="sweibo">新浪</a></span>
+     -->
+   </div>
+</div>
+
+<article class="sale-text">
+	    <h2>详细信息：</h2>
+        <section>
+	    	<h3>活动信息</h3>
+	    	<div class="content text-center">
+	    	<p style="text-align:center;"><strong><span style="font-size:20px;">【太原——山西荣国际旅行社】</span></strong></p><p style="text-align:center;"><strong><span style="font-size:20px;"><br /></span></strong></p><p style="text-align:center;"><strong><span style="font-size:20px;"><br /></span></strong></p><p><br /></p><h1 label="标题居左" classname="undefined" style="font-size:32px;border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;margin:0px 0px 10px;"><span style="font-size:14px;color:#ffffff;background-color:#ffc000;">【使用提示】</span></h1><p><strong><span style="font-size:14px;line-height:../1.5em;">有效日期：</span></strong><span style="font-size:14px;line-height:../1.5em;">即日起至2014年12月17日</span></p><p style="line-height:1.5em;"><strong><span style="font-size:14px;">商家电话：</span></strong><span style="font-size:14px;">0351-7345000</span></p><p style="line-height:1.5em;"><strong><span style="font-size:14px;">营业时间：</span></strong><span style="font-size:14px;">8:00—20:00</span></p><p style="line-height:1.5em;"><strong><span style="font-size:14px;">商家地址：</span></strong><span style="font-size:14px;">小店区平阳路78号飞云公寓11层1111室</span></p><p style="line-height:1.5em;"><strong><span style="font-size:14px;">乘车路线：</span></strong><span style="font-size:14px;">乘13路、 21路、 39路、 56路、65路、 807路;、813路、838路、851路、856路平阳路亲贤街口下车</span></p><p style="line-height:1.5em;"><span style="font-size:14px;line-height:../1.5em;"></span><br /></p><h1 label="标题居左" classname="undefined" style="font-size:32px;border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;margin:0px 0px 10px;"><span style="font-size:14px;"><span style="color:#ffffff;background-color:#ffc000;">【活动详情】 &nbsp;</span> </span></h1><p><strong style="line-height:1.5em;"><span style="font-size:14px;color:#ff0000;">【小店区】晋优惠VIP会员享山西荣国际旅行社9.4折优惠！</span></strong></p><p><strong style="line-height:1.5em;"><span style="font-size:14px;color:#ff0000;"><br /></span></strong></p><p><strong style="line-height:1.5em;"><span style="font-size:14px;color:#ff0000;"></span></strong></p><p><img src="http://183.203.16.186:443//coupon/20131227/36611388132486360.jpg" title="02.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//coupon/20131227/28201388132486399.jpg" title="平遥3.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//coupon/20131227/51311388132486438.jpg" title="五台1.jpg" style="float:none;" /></p><p><br /></p><h1 label="标题居左" classname="undefined" style="font-size:32px;border-bottom-color:#cccccc;border-bottom-width:2px;border-bottom-style:solid;padding:0px 4px 0px 0px;margin:0px 0px 10px;"><span style="font-size:14px;color:#ffffff;background-color:#ffc000;">【商家介绍】 </span></h1><p> &nbsp; <span style="font-size:14px;line-height:../1.5em;">山西荣国际旅行社（有限公司），以下简称荣国旅，也称荣国网，是山西省最大的组团旅行社之一，也是出境组团社，本社主营出境旅游、国内旅游、入境旅游、省内及周边旅游，拥有17年传统旅游运营思路与实操经验。为了顺应21世纪电子商务的发展及网购热潮，我公司于2012年创建了荣国旅游网电子商务平台，专业提供国内外旅游产品策划、采购、编辑、网上预订、400电话接待、旅游攻略、导游形象展示等大型旅游电子商务集成服务平台。</span></p><p><span style="font-size:14px;line-height:../1.5em;"><br /></span></p><p><img src="http://183.203.16.186:443//coupon/20131227/30661388132505132.jpg" title="环境.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//coupon/20131227/25221388132505188.jpg" title="环境1.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//coupon/20131227/81941388132505216.jpg" title="环境2.jpg" style="float:none;" /></p><p><br /></p><p><img src="http://183.203.16.186:443//coupon/20131227/28761388132505266.jpg" title="环境3.jpg" style="float:none;" /></p><p><br /></p>
+	    	</div>
+	    </section>
+	    <!--
+	    <section>
+	    	<h3>商品信息</h3>
+	    	<div class="content text-center">
+	    	<div id="shop_productInfo"></div>
+	    	</div>
+	    </section>
+	    -->
+	    <section>
+	    	<h3>购买须知</h3>
+	    	<p><span style="font-size:14px;">营业时间：8</span><span style="font-size:14px;">:00—20:00</span></p>
+	    </section>
+	    <section>
+	    	<h3>商家详情</h3>
+	    	名称：山西荣国际旅行社<br/>
+	    	地址：小店区平阳路78号飞云公寓11层1111室<br/>
+	    	电话：0351-7345000<br/>
+	    	公交：乘13路、 21路、 39路、 56路、65路、 807路;、813路、838路、851路、856路平阳路亲贤街口下车<br/>
+	    	
+	    </section>
+	    
+</article>
+<article class="comment">
+	<h2>商品评价</h2>
+	<div id="commentList">
+    </div> 
+</article>
+    <script>
+		   $(document).delegate('#cp_describe','pageshow',
+		       function(){
+		           cpTimerUtil(24527557093,$.mobile.activePage.find('#cp_statusText')[0]);
+		       }
+		   );
+		   
+			    getCommentList(2126);
+			    
+	</script>
+</form>
+<footer>
+    <div class="footer_nav"><a href="../../../wap.c365.com/mu-mobi/wap/index.action" data-ajax="false">简版</a> 丨 <a href="../downClient.action" data-ajax="false">客户端</a></div>
+    <div class="footer_bottom">
+      <p>晋优惠[晋ICP备11002219]</p>
+        <p>中国移动通信集团山西有限公司</p>
+    </div>
+  </footer>
+<img style="display:none;" src="../../../hm.baidu.com/hm.gif@si=b0c1b8c5ce6123a5ae92c8ffa9b7582f&et=0&nv=0&st=4&lt=1394293599&v=wap-2-0.3&rnd=501724087" width="0" height="0"  />
+</div>
+</body>
+</html>
