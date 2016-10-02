@@ -1,28 +1,27 @@
-���Ͼ������ngrok�ѹң����������ʶ��һ����д�ģ�������Ҫ��
+网上绝大多数ngrok已挂，这个是我认识的一个人写的，我找他要的
 
-������߿��Ը�ʲô�����Խ���д��hello world ��ȫ�����˷��ʣ�
+这个工具可以干什么？可以将你写的hello world 让全世界人访问！
 
-�������£�
-��CMD���������л���ngrok���ڵ�λ���ٽ������²���
+操作如下：
+在CMD命令中先切换到ngrok所在的位置再进行如下操作
 
 ngrok -config ngrok.cfg -subdomain example 8080
 
-˵����
-example-�Լ��������ã�
-8080-tomcat�Ķ˿ں�
+说明：
+example-自己任意设置；
+8080-tomcat的端口号
 
 
-���������ڽ�example�ĳ��ҵ�����xiaohe���˿�һ�㶼��8080���ø�
-���ҾͿ���
-1���Ȱ����ѹ���ļ���ѹ��d���£�·����þ���d/
-2���㿪ngrok֮��Ȼ����ˣ�ͨ��cmd���� d�� Ȼ��
-������
+比如我现在叫example改成我的名字xiaohe，端口一般都是8080不用改
+那我就可以
+1：先把这个压缩文件解压到d盘下，路径最好就是d/
+2：点开ngrok之后，然后关了，通过cmd输入 d： 然后
+再输入
 ngrok -config ngrok.cfg -subdomain xiaohe 8080
-��ô�Ժ�������и�jsp��ҳ���ڱ���������ϵķ���·��Ϊ��
+那么以后，你假如有个jsp网页，在本机浏览器上的访问路径为：
 http://localhost:8080/MyJavaWebApp/index.jsp
-Ҳֻ������������Ϸ��ʶ԰ɣ���ô�����ͨ��������ߣ�����ӳ�䵽����������Ҳ�ܷ��ʣ�
-����ĳɣ�
+也只能在你浏览器上访问对吧，那么你可以通过这个工具，将其映射到外网，别人也能访问！
+将其改成：
 http://xiaohe.tunnel.qydev.com/MyJavaWebProject/index.jsp
-�����ˣ�ֱ�ӽ������ҳ���һ���൱�����˷����������κεط����ܷ��ʵ���ҳ��
-�õĺõģ�����ҵ��޺ðɣ�����Ҳûɶ���޵ĵط����������ҵ���ҳ����
-http://www.woshidandan123.icoc.in/
+就行了，直接将这个网页变成一个相当于买了服务器，在任何地方都能访问的网页！
+用的好的，记得给我一个赞哦，么么哒~
